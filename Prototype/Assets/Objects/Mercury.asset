@@ -17,4 +17,4 @@ MonoBehaviour:
   planetDiameter: 4.879
   planetDescription: A year on Mercury takes 88 Earth days.
   planetImage: {fileID: 21300000, guid: 572926c23a2ffe64eb8998cf87ddbd66, type: 3}
-  planetBackground: {fileID: 0}
+  planetBackground: {fileID: 21300000, guid: e293a209558313849b6393bfc2e16fb5, type: 3}

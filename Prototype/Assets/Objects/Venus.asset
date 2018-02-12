@@ -17,4 +17,4 @@ MonoBehaviour:
   planetDiameter: 12104
   planetDescription: The name Venus comes from the roman goddess of love and beauty.
   planetImage: {fileID: 21300000, guid: 572926c23a2ffe64eb8998cf87ddbd66, type: 3}
-  planetBackground: {fileID: 0}
+  planetBackground: {fileID: 21300000, guid: 9e5ba977ef5dacd45921c0c5d98a5604, type: 3}
