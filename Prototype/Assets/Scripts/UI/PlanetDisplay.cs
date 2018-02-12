@@ -26,12 +26,37 @@ public class PlanetDisplay : MonoBehaviour
 		
 	}
 
+    private void ShortenValue(Text target, float value)
+    {
+        // Display shortened distances
+        if (value >= 1000000000.0f)
+        {
+            string tmpDistance = value.ToString("n0");
+            target.text = tmpDistance.Remove(tmpDistance.Length - 9) + "bln km";
+        }
+        else if (value >= 1000000.0f)
+        {
+            string tmpDistance = value.ToString("n0");
+            target.text = tmpDistance.Remove(tmpDistance.Length - 6) + "mln km";
+        }
+        else if (value >= 1000.0f)
+        {
+            string tmpDistance = value.ToString("n0");
+            target.text = tmpDistance.Remove(tmpDistance.Length - 3) + "k km";
+        }
+        else if (value >= 0.0f)
+        {
+            target.text = value.ToString("n0") + " km";
+        }
+    }
+
     public void ChangeActivePlanet(PlanetObject planet)
     {
         planetName.text = planet.planetName;
         planetGalaxy.text = planet.planetGalaxy + " galaxy";
-        planetDistance.text = planet.planetDistance.ToString() + " km";
-        planetDiameter.text = planet.planetDiameter.ToString() + " km";
+        ShortenValue(planetDistance, planet.planetDistance);
+        ShortenValue(planetDiameter, planet.planetDiameter);
+        planetDiameter.text = planet.planetDiameter.ToString("n0") + " km";
         planetDescription.text = planet.planetDescription;
         planetImage.sprite = planet.planetImage;
         planetBackground.sprite = planet.planetBackground;
