@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96d8ce70ec473a4cb954b51b26d0690, type: 3}
-  m_Name: Saturn
+  m_Name: Neptune
   m_EditorClassIdentifier: 
-  planetName: Saturn
+  planetName: Neptune
   planetGalaxy: Milkyway
-  planetDistance: 1.45e+9
-  planetDiameter: 116464
-  planetDescription: 116 464
-  planetImage: {fileID: 21300008, guid: 572926c23a2ffe64eb8998cf87ddbd66, type: 3}
+  planetDistance: 4.5e+9
+  planetDiameter: 49.244
+  planetDescription: The planet Neptune was named after the roman god of the sea.
+  planetImage: {fileID: 21300008, guid: 580bafeab62539f4baf07c8e24771686, type: 3}
   planetBackground: {fileID: 0}

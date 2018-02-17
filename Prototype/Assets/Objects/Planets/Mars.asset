@@ -17,5 +17,5 @@ MonoBehaviour:
   planetDiameter: 6.779
   planetDescription: The red color is made of a thick layer of oxidized iron dust
     and rocks of the same color.
-  planetImage: {fileID: 21300006, guid: 572926c23a2ffe64eb8998cf87ddbd66, type: 3}
+  planetImage: {fileID: 21300006, guid: 580bafeab62539f4baf07c8e24771686, type: 3}
   planetBackground: {fileID: 21300000, guid: 163eaab58affb9d48a130da0827130f5, type: 3}

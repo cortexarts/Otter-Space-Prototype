@@ -18,5 +18,5 @@ MonoBehaviour:
   planetDescription: Earth is the third planet from the Sun and the only object in
     the Universe known to harbor life. According to radiometric dating and other sources
     of evidence, Earth formed over 4 billion years ago.
-  planetImage: {fileID: 21300004, guid: 572926c23a2ffe64eb8998cf87ddbd66, type: 3}
+  planetImage: {fileID: 21300004, guid: 580bafeab62539f4baf07c8e24771686, type: 3}
   planetBackground: {fileID: 21300000, guid: dd3a7501d7d711b4f91906f84bed4436, type: 3}

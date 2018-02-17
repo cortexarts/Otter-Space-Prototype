@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 572926c23a2ffe64eb8998cf87ddbd66
-timeCreated: 1517838212
+guid: 580bafeab62539f4baf07c8e24771686
+timeCreated: 1518870232
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Planets_0
-    21300002: Planets_1
-    21300004: Planets_2
-    21300006: Planets_3
-    21300008: Planets_4
+    21300000: Planets_spritesheet_0
+    21300002: Planets_spritesheet_1
+    21300004: Planets_spritesheet_2
+    21300006: Planets_spritesheet_3
+    21300008: Planets_spritesheet_4
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Planets_0
+      name: Planets_spritesheet_0
       rect:
         serializedVersion: 2
         x: 18
@@ -119,7 +119,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Planets_1
+      name: Planets_spritesheet_1
       rect:
         serializedVersion: 2
         x: 222
@@ -133,7 +133,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Planets_2
+      name: Planets_spritesheet_2
       rect:
         serializedVersion: 2
         x: 425
@@ -147,7 +147,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Planets_3
+      name: Planets_spritesheet_3
       rect:
         serializedVersion: 2
         x: 629
@@ -161,7 +161,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Planets_4
+      name: Planets_spritesheet_4
       rect:
         serializedVersion: 2
         x: 832

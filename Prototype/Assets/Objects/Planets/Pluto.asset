@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c96d8ce70ec473a4cb954b51b26d0690, type: 3}
-  m_Name: Jupiter
+  m_Name: Pluto
   m_EditorClassIdentifier: 
-  planetName: Jupiter
+  planetName: Pluto
   planetGalaxy: Milkyway
-  planetDistance: 778000000
-  planetDiameter: 139822
-  planetDescription: One day on Jupiter last about nine hour and fifty-five minutes.
-  planetImage: {fileID: 21300002, guid: 572926c23a2ffe64eb8998cf87ddbd66, type: 3}
+  planetDistance: 5e+9
+  planetDiameter: 2.372
+  planetDescription: Pluto is one third water.
+  planetImage: {fileID: 21300002, guid: 580bafeab62539f4baf07c8e24771686, type: 3}
   planetBackground: {fileID: 0}
