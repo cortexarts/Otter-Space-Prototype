@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum FuelTypes
+{
+    Liquid,
+    Petroleum,
+    Cryogenic,
+    Solid
+}
+
 [CreateAssetMenu(fileName = "New Fuel", menuName = "Fuel")]
 public class FuelObject : ScriptableObject
 {
     public string fuelName;
     public string fuelDescription;
+    public FuelTypes fuelType;
     public float fuelLevel;
 
 	// Use this for initialization

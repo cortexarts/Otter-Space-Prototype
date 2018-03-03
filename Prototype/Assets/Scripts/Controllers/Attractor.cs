@@ -27,7 +27,6 @@ public class Attractor : MonoBehaviour
         Debug.Log(gameObject.name + " is attracting " + objToAttract.name);
 
         Rigidbody2D rbToAttract = objToAttract.GetComponent<Rigidbody2D>();
-        
         Vector2 direction = new Vector2(transform.position.x, transform.position.y) - rbToAttract.position;
         float distance = direction.magnitude;
 
@@ -38,16 +37,12 @@ public class Attractor : MonoBehaviour
 
         // Rotation
         float angle = Vector3.Angle(Vector3.up, objToAttract.transform.position - transform.position);
-        Debug.Log("angle " + angle);
         float currentAngle = objToAttract.transform.eulerAngles.z;
-
         if (objToAttract.transform.position.x > transform.position.x)
         {
             angle = -angle;
         }
-
         float finalAngle = Mathf.LerpAngle(currentAngle, angle, Time.deltaTime);
-
         objToAttract.transform.eulerAngles = new Vector3(0, 0, finalAngle);
     }
 }

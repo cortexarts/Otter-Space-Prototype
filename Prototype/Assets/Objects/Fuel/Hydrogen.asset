@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19710a67a7593154da690ebdb6fea24e, type: 3}
   m_Name: Hydrogen
   m_EditorClassIdentifier: 
-  fuelName: Hydrogen
-  fuelDescription: Liquid oxygen (LOX, O2) and liquid hydrogen (LH2, H2) are cryogenic
+  fuelName: Liquid Hydrogen
+  fuelDescription: Liquid Oxygen (LOX, O2) and Liquid Hydrogen (LH2, H2) are cryogenic
     propellants. The result of these components is Liquid Hydrogen (LH2). Liquid Hydrogen
-    is used in most stages of a rocket or space shuttle, therefore a very good choice
-    as rocket propellant.
+    is used in most stages of a rocket or space shuttles.
+  fuelType: 2
   fuelLevel: 4

@@ -15,4 +15,5 @@ MonoBehaviour:
   fuelDescription: Diesel (C12H23) is a very efficient and relatively cheap fuel.
     The only downside it has are requirement of bigger, and therefore heavier, engines
     and the emission of fine particulates.
+  fuelType: 1
   fuelLevel: 1

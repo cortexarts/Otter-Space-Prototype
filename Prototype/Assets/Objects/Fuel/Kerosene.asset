@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19710a67a7593154da690ebdb6fea24e, type: 3}
   m_Name: Kerosene
   m_EditorClassIdentifier: 
-  fuelName: Kersoene
-  fuelDescription: Liquid oxygen (LOX) and Kerosene (CxHy) are cryogenic propellants.
-    Kerosene is a very practical fuel for rocket booster. A downside is that this
-    specific application requires full atmoshperic pressure and mostly is used for
-    the first stage of a launch.
+  fuelName: Kerosene
+  fuelDescription: Liquid Oxygen (LOX) and refined Kerosene (CxHy) create a cryogenic
+    propellant called LOX/RP-1. Kerosene is a very practical fuel for rocket booster.
+    A downside is that this specific application requires full atmoshperic pressure
+    and mostly is used for the first stage of a launch.
+  fuelType: 0
   fuelLevel: 3
