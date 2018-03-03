@@ -14,5 +14,6 @@ MonoBehaviour:
   fuelName: Aerozine 50
   fuelDescription: A 50/50 mix of Hydrazine (H2N-N) and Unsymmetrical dimethylhydrazine
     H2NN(CH3)2 create a liquid propellant called Aerozine 50.
+  fuelFormula: C2H12N4
   fuelType: 0
   fuelLevel: 3

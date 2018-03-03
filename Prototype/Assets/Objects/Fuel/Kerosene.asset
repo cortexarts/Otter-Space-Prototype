@@ -16,5 +16,6 @@ MonoBehaviour:
     propellant called LOX/RP-1. Kerosene is a very practical fuel for rocket booster.
     A downside is that this specific application requires full atmoshperic pressure
     and mostly is used for the first stage of a launch.
+  fuelFormula: C12H26
   fuelType: 0
   fuelLevel: 3

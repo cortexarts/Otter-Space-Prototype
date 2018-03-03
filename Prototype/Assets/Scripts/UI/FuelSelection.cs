@@ -26,7 +26,7 @@ public class FuelSelection : MonoBehaviour
     public void ChangeFuelType(FuelObject fuel)
     {
         PlayerPrefs.SetString("FuelType", fuel.fuelName);
-        Name.text = fuel.fuelName;
+        Name.text = fuel.fuelName + " (" + fuel.fuelFormula + ")";
         Type.text = fuel.fuelType.ToString() + " propellant";
         DescriptionText.text = fuel.fuelDescription;
     }

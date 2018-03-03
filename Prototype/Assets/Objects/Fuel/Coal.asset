@@ -14,5 +14,6 @@ MonoBehaviour:
   fuelName: Coal
   fuelDescription: The only thing coal will boost is the American economy according
     to President Donald Trump.
+  fuelFormula: CO
   fuelType: 2
   fuelLevel: 0
