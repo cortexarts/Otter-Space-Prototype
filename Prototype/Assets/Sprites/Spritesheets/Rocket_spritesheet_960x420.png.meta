@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: a834e054a408e5442af3cd2faf8b4ca1
-timeCreated: 1519469754
+guid: 80311d94da671314b9b510e4b569a4f7
+timeCreated: 1520083486
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Rocket_healthy
-    21300002: Rocket_damaged
-    21300004: Rocket_broken
+    21300000: Rocket_spritesheet_960x420_0
+    21300002: Rocket_spritesheet_960x420_1
+    21300004: Rocket_spritesheet_960x420_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 125
+  spritePixelsToUnits: 120
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -103,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rocket_healthy
+      name: Rocket_spritesheet_960x420_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 18
-        width: 254
-        height: 335
+        x: 0
+        y: 0
+        width: 302
+        height: 420
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,13 +117,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rocket_damaged
+      name: Rocket_spritesheet_960x420_1
       rect:
         serializedVersion: 2
-        x: 315
-        y: 16
-        width: 254
-        height: 335
+        x: 323
+        y: 0
+        width: 302
+        height: 420
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,13 +131,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Rocket_broken
+      name: Rocket_spritesheet_960x420_2
       rect:
         serializedVersion: 2
-        x: 608
-        y: 15
-        width: 262
-        height: 339
+        x: 658
+        y: 0
+        width: 302
+        height: 420
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
