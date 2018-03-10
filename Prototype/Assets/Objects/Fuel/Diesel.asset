@@ -17,4 +17,7 @@ MonoBehaviour:
     and the emission of fine particulates.
   fuelFormula: C12H24
   fuelType: 1
+  elements:
+  - Coal
+  - Hydrogen
   fuelLevel: 1

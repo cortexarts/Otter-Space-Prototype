@@ -17,6 +17,7 @@ public class FuelObject : ScriptableObject
     public string fuelDescription;
     public string fuelFormula;
     public FuelTypes fuelType;
+    public List<string> elements;
     public float fuelLevel;
 
 	// Use this for initialization

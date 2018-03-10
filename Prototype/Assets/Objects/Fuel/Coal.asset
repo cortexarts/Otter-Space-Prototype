@@ -16,4 +16,7 @@ MonoBehaviour:
     to President Donald Trump.
   fuelFormula: CO
   fuelType: 2
+  elements:
+  - Carbon
+  - Oxygen
   fuelLevel: 0

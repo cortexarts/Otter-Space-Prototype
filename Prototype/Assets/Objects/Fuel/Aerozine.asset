@@ -16,4 +16,8 @@ MonoBehaviour:
     H2NN(CH3)2 create a liquid propellant called Aerozine 50.
   fuelFormula: C2H12N4
   fuelType: 0
+  elements:
+  - Coal
+  - Hydrogen
+  - Nitrogen
   fuelLevel: 3

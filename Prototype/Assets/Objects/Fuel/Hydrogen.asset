@@ -17,4 +17,6 @@ MonoBehaviour:
     is used in most stages of a rocket or space shuttles.
   fuelFormula: LH2
   fuelType: 2
+  elements:
+  - Hydrogen
   fuelLevel: 4

@@ -18,4 +18,7 @@ MonoBehaviour:
     and mostly is used for the first stage of a launch.
   fuelFormula: C12H26
   fuelType: 0
+  elements:
+  - Coal
+  - Hydrogen
   fuelLevel: 3
