@@ -837,11 +837,6 @@ MonoBehaviour:
   - {fileID: 1088003024}
   - {fileID: 1348092382}
   - {fileID: 800237699}
-  names:
-  - Oxygen
-  - Hydrogen
-  - Carbon
-  - Nitrogen
   maxDistance: 50
 --- !u!1 &172260168
 GameObject:
@@ -1412,7 +1407,7 @@ GameObject:
   - component: {fileID: 373589439}
   - component: {fileID: 373589438}
   m_Layer: 5
-  m_Name: Button_oxygen
+  m_Name: Button_Oxygen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1488,10 +1483,10 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 167483544}
           m_MethodName: EndDrag
-          m_Mode: 1
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 373589435}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -3386,7 +3381,7 @@ GameObject:
   - component: {fileID: 800237699}
   - component: {fileID: 800237698}
   m_Layer: 5
-  m_Name: Button_nitrogen
+  m_Name: Button_Nitrogen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5700,7 +5695,7 @@ GameObject:
   - component: {fileID: 1088003024}
   - component: {fileID: 1088003023}
   m_Layer: 5
-  m_Name: Button_hydrogen
+  m_Name: Button_Hydrogen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6908,7 +6903,7 @@ GameObject:
   - component: {fileID: 1348092382}
   - component: {fileID: 1348092381}
   m_Layer: 5
-  m_Name: Button_carbon
+  m_Name: Button_Carbon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

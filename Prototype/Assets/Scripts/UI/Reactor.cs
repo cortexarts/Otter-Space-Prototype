@@ -14,7 +14,6 @@ public class Reactor : MonoBehaviour
     public Button LiquidOxygen;
     public Button Coal;
     public List<Button> buttons;
-    public List<string> names;
 
     public float maxDistance;
 
@@ -32,53 +31,54 @@ public class Reactor : MonoBehaviour
         target.transform.position = new Vector3(offsetX + Input.mousePosition.x, offsetY + Input.mousePosition.y);
     }
 
-    public void EndDrag()
+    public void EndDrag(GameObject target)
     {
-        for (int i = 0; i < buttons.Count - 1; i++)
+        string targetName = target.name.Substring(7);
+
+        for (int i = 0; i < buttons.Count; i++)
         {
-            for (int j = 1; j < buttons.Count; j++)
+            string buttonName = buttons[i].name.Substring(7);
+
+            if (targetName != buttonName)
             {
-                float distance = Vector2.Distance(buttons[i].transform.position, buttons[j].transform.position);
+                float distance = Vector2.Distance(target.transform.position, buttons[i].transform.position);
                 if (distance < maxDistance)
                 {
                     for (int f = 0; f < fuelObjects.Count; f++)
                     {
                         for (int e = 0; e < fuelObjects[f].elements.Count; e++)
                         {
-                            if (names[e] == fuelObjects[f].elements[e])
+                            if (targetName == fuelObjects[f].elements[e])
                             {
-                                if (fuelObjects[f].elements[e] == names[e])
+                                switch (fuelObjects[f].elements[e])
                                 {
-                                    switch (fuelObjects[f].elements[e])
-                                    {
-                                        case "Hydrogen":
-                                            buttons[i].gameObject.SetActive(false);
-                                            buttons[j].gameObject.SetActive(false);
-                                            LiquidHydrogen.transform.position = buttons[i].transform.position;
-                                            LiquidHydrogen.gameObject.SetActive(true);
-                                            break;
-                                        case "Nitrogen":
-                                            buttons[i].gameObject.SetActive(false);
-                                            buttons[j].gameObject.SetActive(false);
-                                            Hydrazine.transform.position = buttons[i].transform.position;
-                                            Hydrazine.gameObject.SetActive(true);
-                                            break;
-                                        case "Oxygen":
-                                            buttons[i].gameObject.SetActive(false);
-                                            buttons[j].gameObject.SetActive(false);
-                                            LiquidOxygen.transform.position = buttons[i].transform.position;
-                                            LiquidOxygen.gameObject.SetActive(true);
-                                            break;
-                                        case "Carbon":
-                                            buttons[i].gameObject.SetActive(false);
-                                            buttons[j].gameObject.SetActive(false);
-                                            Coal.transform.position = buttons[i].transform.position;
-                                            Coal.gameObject.SetActive(true);
-                                            break;
-                                        default:
-                                            Debug.LogWarning("No reaction results!");
-                                            break;
-                                    }
+                                    case "Hydrogen":
+                                        buttons[i].gameObject.SetActive(false);
+                                        target.gameObject.SetActive(false);
+                                        LiquidHydrogen.transform.position = buttons[i].transform.position;
+                                        LiquidHydrogen.gameObject.SetActive(true);
+                                        break;
+                                    case "Nitrogen":
+                                        buttons[i].gameObject.SetActive(false);
+                                        target.gameObject.SetActive(false);
+                                        Hydrazine.transform.position = buttons[i].transform.position;
+                                        Hydrazine.gameObject.SetActive(true);
+                                        break;
+                                    case "Oxygen":
+                                        buttons[i].gameObject.SetActive(false);
+                                        target.gameObject.SetActive(false);
+                                        LiquidOxygen.transform.position = buttons[i].transform.position;
+                                        LiquidOxygen.gameObject.SetActive(true);
+                                        break;
+                                    case "Carbon":
+                                        buttons[i].gameObject.SetActive(false);
+                                        target.gameObject.SetActive(false);
+                                        Coal.transform.position = buttons[i].transform.position;
+                                        Coal.gameObject.SetActive(true);
+                                        break;
+                                    default:
+                                        Debug.LogWarning("No reaction results!");
+                                        break;
                                 }
                             }
                         }
