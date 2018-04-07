@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         if (rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
         {
-            rigidBody2D.AddForce(new Vector2(Input.GetAxis("Horizontal") * movementSpeedScale * Time.deltaTime, Input.GetAxis("Vertical") * movementSpeedScale * Time.deltaTime));
+            rigidBody2D.AddForce(transform.up * Input.GetAxis("Vertical") * movementSpeedScale * Time.deltaTime);
         }
 
         if (planet == null)
