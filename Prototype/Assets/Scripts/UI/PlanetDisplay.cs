@@ -54,9 +54,9 @@ public class PlanetDisplay : MonoBehaviour
     {
         planetName.text = planet.planetName;
         planetGalaxy.text = planet.planetGalaxy + " galaxy";
-        ShortenValue(planetDistance, planet.planetDistance);
-        ShortenValue(planetDiameter, planet.planetDiameter);
-        planetDiameter.text = planet.planetDiameter.ToString("n0") + " km";
+        ShortenValue(planetDistance, planet.planetDistanceToEarth);
+        ShortenValue(planetDiameter, planet.planetRadius);
+        planetDiameter.text = planet.planetRadius.ToString("n0") + " km";
         planetDescription.text = planet.planetDescription;
         planetImage.sprite = planet.planetImage;
         planetBackground.sprite = planet.planetBackground;

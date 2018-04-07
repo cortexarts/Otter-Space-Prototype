@@ -8,9 +8,14 @@ public class PlanetObject : ScriptableObject
 {
     public string planetName;
     public string planetGalaxy;
-    public float planetDistance;
-    public float planetDiameter;
+    public float planetRadius;
+    public float planetMass;
+    public float planetGravity;
+    public float planetEscapeVelocity;
+    public float planetOrbitalVelocity;
+    public float planetRotaiton;
     public string planetDescription;
+    public float planetDistanceToEarth;
     public Sprite planetImage;
     public Sprite planetBackground;
 
