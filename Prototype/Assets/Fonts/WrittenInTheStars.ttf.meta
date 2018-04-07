@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 8cbbe83897601ab429fa3052c190cbc6
+timeCreated: 1523109304
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Written in the Stars
+  fontNames:
+  - Written in the Stars
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
