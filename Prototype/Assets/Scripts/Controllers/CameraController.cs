@@ -33,7 +33,7 @@ public class CameraController : MonoBehaviour
         ChangeSize(-0.1f);
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         // Only update lookahead position if accelerating or changed direction
         float xMoveDelta = (target.position - m_LastTargetPosition).x;

@@ -20,4 +20,4 @@ MonoBehaviour:
   elements:
   - Coal
   - Hydrogen
-  fuelLevel: 1
+  fuelLevel: 2

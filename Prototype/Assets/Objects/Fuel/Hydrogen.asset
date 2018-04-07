@@ -19,4 +19,4 @@ MonoBehaviour:
   fuelType: 2
   elements:
   - Hydrogen
-  fuelLevel: 4
+  fuelLevel: 5

@@ -19,4 +19,4 @@ MonoBehaviour:
   elements:
   - Carbon
   - Oxygen
-  fuelLevel: 0
+  fuelLevel: 1
