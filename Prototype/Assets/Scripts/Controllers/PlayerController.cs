@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rigidBody2D;
     private GameObject planet;
+    private bool isBoosting = false;
     private int fuelLevel = 1;
 
 	// Use this for initialization
@@ -30,6 +31,25 @@ public class PlayerController : MonoBehaviour
         {
             fuelAmount -= Time.deltaTime / fuelLevel;
         }
+
+        if (CrossPlatformInputManager.GetButtonDown("Fire1"))
+        {
+            Shoot();
+        }
+
+        if (CrossPlatformInputManager.GetButtonDown("Boost"))
+        {
+            isBoosting = true;
+        }
+        else
+        {
+            isBoosting = false;
+        }
+    }
+
+    private void Shoot()
+    {
+        Debug.Log("Shot!");
     }
 
     public float GetVelocity()
@@ -47,12 +67,12 @@ public class PlayerController : MonoBehaviour
     {
         if (rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
         {
-            rigidBody2D.AddForce(transform.up * Input.GetAxis("Vertical") * movementSpeedScale * Time.fixedDeltaTime);
+            rigidBody2D.AddForce(transform.up * CrossPlatformInputManager.GetAxis("Vertical") * movementSpeedScale * Time.fixedDeltaTime);
         }
 
         if (planet == null)
         {
-            transform.Rotate(transform.forward, -Input.GetAxis("Horizontal") * rotationSpeedScale * Time.fixedDeltaTime);
+            transform.Rotate(transform.forward, -CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeedScale * Time.fixedDeltaTime);
         }
     }
 

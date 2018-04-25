@@ -24,7 +24,7 @@ public class Attractor : MonoBehaviour
 
     void Attract(GameObject objToAttract)
     {
-        Debug.Log(gameObject.name + " is attracting " + objToAttract.name);
+        //Debug.Log(gameObject.name + " is attracting " + objToAttract.name);
 
         Rigidbody2D rbToAttract = objToAttract.GetComponent<Rigidbody2D>();
         Vector2 direction = new Vector2(transform.position.x, transform.position.y) - rbToAttract.position;
