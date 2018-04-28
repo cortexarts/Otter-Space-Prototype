@@ -32,11 +32,6 @@ public class PlayerController : MonoBehaviour
             fuelAmount -= Time.deltaTime / fuelLevel;
         }
 
-        if (CrossPlatformInputManager.GetButtonDown("Fire1"))
-        {
-            Shoot();
-        }
-
         if (CrossPlatformInputManager.GetButtonDown("Boost"))
         {
             isBoosting = true;
@@ -45,13 +40,6 @@ public class PlayerController : MonoBehaviour
         {
             isBoosting = false;
         }
-
-        Debug.DrawLine(transform.position, rigidBody2D.transform.up, Color.red);
-    }
-
-    private void Shoot()
-    {
-        Debug.Log("Shot!");
     }
 
     public float GetVelocity()
