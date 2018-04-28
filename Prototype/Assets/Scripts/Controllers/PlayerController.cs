@@ -45,6 +45,8 @@ public class PlayerController : MonoBehaviour
         {
             isBoosting = false;
         }
+
+        Debug.DrawLine(transform.position, rigidBody2D.transform.up, Color.red);
     }
 
     private void Shoot()
@@ -70,10 +72,7 @@ public class PlayerController : MonoBehaviour
             rigidBody2D.AddForce(transform.up * CrossPlatformInputManager.GetAxis("Vertical") * movementSpeedScale * Time.fixedDeltaTime);
         }
 
-        if (planet == null)
-        {
-            transform.Rotate(transform.forward, -CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeedScale * Time.fixedDeltaTime);
-        }
+        transform.Rotate(transform.forward, -CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeedScale * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

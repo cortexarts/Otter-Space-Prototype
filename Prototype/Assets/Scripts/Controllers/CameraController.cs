@@ -11,6 +11,8 @@ public class CameraController : MonoBehaviour
     public float lookAheadFactor = 3.0f;
     public float lookAheadReturnSpeed = 0.5f;
     public float lookAheadMoveThreshold = 0.1f;
+    public float zoomSpeed = 0.1f;
+    public bool isZooming = false;
 
     private float m_OffsetZ;
     private Vector3 m_LastTargetPosition;
@@ -30,7 +32,10 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        ChangeSize(-0.1f);
+        if (isZooming)
+        {
+            ChangeSize();
+        }
     }
 
     private void FixedUpdate()
@@ -57,9 +62,13 @@ public class CameraController : MonoBehaviour
         m_LastTargetPosition = target.position;
     }
 
-    public void ChangeSize(float difference)
+    public void ChangeSize()
     {
-        float size = (mainCamera.orthographicSize + difference);
+        float size = (mainCamera.orthographicSize - zoomSpeed);
+        if (size < minSize || size > maxSize)
+        {
+            isZooming = false;
+        }
         mainCamera.orthographicSize = Mathf.Clamp(size, minSize, maxSize);
     }
 }

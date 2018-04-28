@@ -8,6 +8,8 @@ public class MenuManager : MonoBehaviour
     public GameObject optionsPanel;
     public GameObject pausePanel;
     public bool isPaused = false;
+    public float elapsedtime = 0f;
+    public float timeInScene = 0;
 
 	// Use this for initialization
 	void Start ()
@@ -18,8 +20,14 @@ public class MenuManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        if (CrossPlatformInputManager.GetButtonDown("Cancel"))
+        {
+            TogglePause();
+        }
+
+        timeInScene += Time.fixedDeltaTime;
+        elapsedtime = Time.realtimeSinceStartup;
+    }
 
     public void TogglePause()
     {
@@ -51,6 +59,7 @@ public class MenuManager : MonoBehaviour
 
     public void SwitchScene(string name)
     {
+        timeInScene = 0;
         SceneManager.LoadScene(name);
     }
 
