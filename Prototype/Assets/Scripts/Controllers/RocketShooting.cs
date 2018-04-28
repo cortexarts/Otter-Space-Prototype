@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RocketShooting : MonoBehaviour
 {
     public GameObject missilePrefab;
-    public Text TextValue;
+    //public Text TextValue;
     public KeyCode IncreaseKey;
     public KeyCode DecreaseKey;
     public int Value;
@@ -20,7 +20,7 @@ public class RocketShooting : MonoBehaviour
     void Start ()
     {
         Value = ValueMin;
-        TextValue.text = Value.ToString();
+        //TextValue.text = Value.ToString();
     }
 
     // Update is called once per frame
@@ -38,13 +38,13 @@ public class RocketShooting : MonoBehaviour
         if (Input.GetKeyUp(IncreaseKey))
         {
             Value++;
-            TextValue.text = Value.ToString();
+            //TextValue.text = Value.ToString();
         }
 
         if (Input.GetKeyUp(DecreaseKey))
         {
             Value--;
-            TextValue.text = Value.ToString();
+            //TextValue.text = Value.ToString();
         }
     }
 
