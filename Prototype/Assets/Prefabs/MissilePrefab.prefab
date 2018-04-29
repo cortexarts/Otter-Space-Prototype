@@ -102,7 +102,7 @@ MonoBehaviour:
   answer: 0
   lifeTime: 0
   maxLifeTime: 5
-  m_Velocity: 200
+  m_Velocity: 500
   camShakeAmt: 0.05
   camShakeLength: 0.1
   Shockwave: {fileID: 1457597740145072, guid: b2c670f9b908dec49af929af04d4b0cc, type: 2}
