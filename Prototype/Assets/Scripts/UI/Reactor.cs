@@ -60,36 +60,28 @@ public class Reactor : MonoBehaviour
                                         target.gameObject.SetActive(false);
                                         LiquidHydrogen.transform.position = buttons[i].transform.position;
                                         LiquidHydrogen.gameObject.SetActive(true);
-                                        resultPopUp.GetComponent<Animator>().SetTrigger("PopUp");
-                                        resultHeaderText.text = "Awesome!";
-                                        resultText.text = "You made Liquid Hydrogen!";
+                                        PlayAnimation("Great!", "You made Liquid Hydrogen!");
                                         break;
                                     case "Nitrogen":
                                         buttons[i].gameObject.SetActive(false);
                                         target.gameObject.SetActive(false);
                                         Hydrazine.transform.position = buttons[i].transform.position;
                                         Hydrazine.gameObject.SetActive(true);
-                                        resultPopUp.GetComponent<Animator>().SetTrigger("PopUp");
-                                        resultHeaderText.text = "Great!";
-                                        resultText.text = "You made Hydrazine!";
+                                        PlayAnimation("Great!", "You made Liquid Hydrazine!");
                                         break;
                                     case "Oxygen":
                                         buttons[i].gameObject.SetActive(false);
                                         target.gameObject.SetActive(false);
                                         LiquidOxygen.transform.position = buttons[i].transform.position;
                                         LiquidOxygen.gameObject.SetActive(true);
-                                        resultPopUp.GetComponent<Animator>().SetTrigger("PopUp");
-                                        resultHeaderText.text = "Great!";
-                                        resultText.text = "You made Liquid Oxygen!";
+                                        PlayAnimation("Great!", "You made Liquid Oxygen!");
                                         break;
                                     case "Carbon":
                                         buttons[i].gameObject.SetActive(false);
                                         target.gameObject.SetActive(false);
                                         Coal.transform.position = buttons[i].transform.position;
                                         Coal.gameObject.SetActive(true);
-                                        resultPopUp.GetComponent<Animator>().SetTrigger("PopUp");
-                                        resultHeaderText.text = "Darn!";
-                                        resultText.text = "You made Coal!";
+                                        PlayAnimation("Darn!", "You made Coal!");
                                         break;
                                     default:
                                         Debug.LogWarning("No reaction results!");
@@ -101,5 +93,12 @@ public class Reactor : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void PlayAnimation(string title, string text)
+    {
+        resultPopUp.GetComponent<Animator>().SetTrigger("PopUp");
+        resultHeaderText.text = title;
+        resultText.text = text;
     }
 }
