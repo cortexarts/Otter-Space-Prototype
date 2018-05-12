@@ -35,9 +35,14 @@ public class MissileBehaviour : MonoBehaviour
         //}
     }
 
-    void SetAnswer(int value)
+    public void SetAnswer(int value)
     {
         answer = value;
+    }
+
+    public void AddVelocity(float value)
+    {
+        m_Velocity += value;
     }
 
     // Update is called once per frame
@@ -48,7 +53,7 @@ public class MissileBehaviour : MonoBehaviour
         if (lifeTime > maxLifeTime)
         {
             Instantiate(AsteroidExplosion, this.gameObject.transform.position, Quaternion.identity);
-            DestroyObject(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -68,7 +73,7 @@ public class MissileBehaviour : MonoBehaviour
             if (collider.GetComponent<AsteroidValues>().answer == answer)
             {
                 rocketShooting.numCorrectAnswers++;
-                DestroyObject(collider.gameObject);
+                Destroy(collider.gameObject);
                 //camShake.Shake(camShakeAmt, camShakeLength);
                 //Instantiate(IronOre, this.gameObject.transform.position, Quaternion.identity);
             }
@@ -83,7 +88,7 @@ public class MissileBehaviour : MonoBehaviour
                 Instantiate(AsteroidExplosion, this.gameObject.transform.position, Quaternion.identity);
             }
 
-            DestroyObject(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

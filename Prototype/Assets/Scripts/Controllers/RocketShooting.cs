@@ -52,6 +52,7 @@ public class RocketShooting : MonoBehaviour
     {
         GameObject Missile = Instantiate(missilePrefab, this.transform.position, this.transform.rotation);
         Missile.SendMessage("SetAnswer", Value);
+        Missile.GetComponent<MissileBehaviour>().AddVelocity(GetComponent<PlayerController>().GetVelocity());
         //if (++Value > ValueMax)
         //{
         //    Value = ValueMin;
