@@ -21,5 +21,5 @@ public class HUD : MonoBehaviour
     {
         Speed.text = player.GetVelocity().ToString("F");
         Fuel.text = player.GetFuelAmount().ToString("F");
-	}
+    }
 }

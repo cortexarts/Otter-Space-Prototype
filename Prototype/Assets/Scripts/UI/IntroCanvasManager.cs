@@ -35,10 +35,12 @@ public class IntroCanvasManager : MonoBehaviour
             case State.Default:
                 panelControls.SetActive(true);
                 panelAnimation.SetActive(false);
+                panelHUD.SetActive(false);
                 currentState = State.Controls;
                 break;
             case State.Controls:
                 panelControls.SetActive(false);
+                panelHUD.SetActive(false);
                 panelAnimation.SetActive(true);
                 currentState = State.Animation;
                 break;
