@@ -26,6 +26,11 @@ namespace Utility
 
         public static void Log(Severity severity, string name, string message)
         {
+            Debug.Log(name + " @" + System.DateTime.Now + ": " + message);
+        }
+
+        public static void LogSeverity(Severity severity, string name, string message)
+        {
             switch(severity)
             {
                 case Severity.Error:
