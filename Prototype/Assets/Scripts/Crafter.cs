@@ -159,7 +159,7 @@ public class Crafter : MonoBehaviour
             }
             else
             {
-                if(recipe.input03 == slot03)
+                if(recipe.input03 == slot03 || recipe.input03 == slot02 || recipe.input03 == slot01)
                 {
                     if(!Inventory.instance.HasItem(recipe.result))
                     {
@@ -174,7 +174,7 @@ public class Crafter : MonoBehaviour
 
 	Item[] GetResultsInInventory()
 	{
-        if(slot01 == null || slot02 == null || slot03 == null)
+        if(slot01 == null || slot02 == null)
         {
             return null;
         }
@@ -196,7 +196,17 @@ public class Crafter : MonoBehaviour
                     }
                 }
             }
-		}
+            else
+            {
+                if(recipe.input03 == slot03 || recipe.input03 == slot02 || recipe.input03 == slot01)
+                {
+                    if(!Inventory.instance.HasItem(recipe.result))
+                    {
+                        items.Add(recipe.result);
+                    }
+                }
+            }
+        }
 
 		return items.ToArray();
 	}

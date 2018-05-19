@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7f905dded303a24a84792fc72f944ee, type: 3}
-  m_Name: Hyradzine
+  m_Name: Unsymmetrical dimethylhydrazine
   m_EditorClassIdentifier: 
-  input01: {fileID: 11400000, guid: dcf456af0d764734a82d31c33b53de45, type: 2}
+  input01: {fileID: 11400000, guid: a6fedf99e04ea2441b6c8e056e6e43de, type: 2}
   input02: {fileID: 11400000, guid: 8e50bf267b3714b4d912a6358496592f, type: 2}
-  input03: {fileID: 0}
-  result: {fileID: 11400000, guid: 3d8de726c3974824581393f185d85e32, type: 2}
+  input03: {fileID: 11400000, guid: dcf456af0d764734a82d31c33b53de45, type: 2}
+  result: {fileID: 11400000, guid: 06e1ba1cdd91d4c4b94fdb5df0b05f7d, type: 2}
   altInput01: {fileID: 0}
   altInput02: {fileID: 0}
