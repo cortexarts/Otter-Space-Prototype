@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Crafter : MonoBehaviour
 {
@@ -14,9 +15,9 @@ public class Crafter : MonoBehaviour
 		instance = this;
 	}
 
-	#endregion
+    #endregion
 
-	public Item slot01;
+    public Item slot01;
 	public Item slot02;
     public Item slot03;
 
@@ -210,5 +211,4 @@ public class Crafter : MonoBehaviour
 
 		return items.ToArray();
 	}
-
 }
