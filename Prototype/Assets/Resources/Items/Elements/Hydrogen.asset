@@ -9,11 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e042b4c80c76724aabd39a6d5dacf25, type: 3}
-  m_Name: Nitrogen
+  m_Name: Hydrogen
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 7fdbf8b13b0c88840919c01357dcb9b9, type: 3}
-  discoveryText: test
-  discoveryTitle: 
+  icon: {fileID: 21300000, guid: a4cd91dc42c2d58418c49613184e0d9c, type: 3}
+  discoveryText: You've discovered Hydrogen! Hydrogen is a chemical element with symbol
+    H and atomic number 1. It belongs to group 1 of the periodic table.
+  discoveryTitle: The Universe
   customColor: {r: 0, g: 0, b: 0, a: 1}
   customSound: 
   itemObject: {fileID: 0}

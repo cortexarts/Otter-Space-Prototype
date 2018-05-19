@@ -18,6 +18,7 @@ public class Crafter : MonoBehaviour
 
 	public Item slot01;
 	public Item slot02;
+    public Item slot03;
 
 	public Recipe[] recipes;
 
@@ -39,10 +40,15 @@ public class Crafter : MonoBehaviour
 		if (slot == 1)
 		{
 			slot01 = item;
-		} else if (slot == 2)
+		}
+        else if (slot == 2)
 		{
 			slot02 = item;
 		}
+        else if(slot == 3)
+        {
+            slot03 = item;
+        }
 
 		UpdateResult();
 	}
@@ -54,10 +60,15 @@ public class Crafter : MonoBehaviour
 		if (slot == 1)
 		{
 			slot01 = null;
-		} else if (slot == 2)
+		}
+        else if (slot == 2)
 		{
 			slot02 = null;
 		}
+        else if(slot == 3)
+        {
+            slot03 = null;
+        }
 
 		UpdateResult();
 	}
@@ -89,8 +100,10 @@ public class Crafter : MonoBehaviour
 	{
 		GameObject itemObj = Instantiate(itemPrefab, resultsParent);
 		ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
-		if (display != null)
-			display.Setup(item);
+        if(display != null)
+        {
+            display.Setup(item);
+        }
 
 		Animator anim = itemObj.GetComponent<Animator>();
 		anim.SetBool("Pickup", false);
@@ -106,8 +119,10 @@ public class Crafter : MonoBehaviour
 		GameObject itemObj = Instantiate(ghostItemPrefab, resultsParent);
 		ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
 
-		if (display != null)
-			display.Setup(item);
+        if(display != null)
+        {
+            display.Setup(item);
+        }
 	}
 
 	void ClearPreviousResult ()
@@ -120,25 +135,38 @@ public class Crafter : MonoBehaviour
 
 	Item[] GetResults ()
 	{
-		if (slot01 == null || slot02 == null)
-			return null;
+        if(slot01 == null || slot02 == null)
+        {
+            return null;
+        }
 
 		List<Item> items = new List<Item>();
 
 		foreach (Recipe recipe in recipes)
 		{
-			if ((recipe.input01 == slot01 && recipe.input02 == slot02) ||
-				(recipe.input01 == slot02 && recipe.input02 == slot01) ||
-				(recipe.altInput01 == slot02 && recipe.altInput02 == slot01) ||
-				(recipe.altInput02 == slot02 && recipe.altInput01 == slot01) ||
-				(recipe.alt02Input01 == slot02 && recipe.alt02Input02 == slot01) ||
-				(recipe.alt02Input02 == slot02 && recipe.alt02Input01 == slot01))
-			{
-				if (!Inventory.instance.HasItem(recipe.result))
-				{
-					items.Add(recipe.result);
-				}
-			}
+            if(slot03 == null)
+            {
+                if((recipe.input01 == slot01 && recipe.input02 == slot02) ||
+                    (recipe.input01 == slot02 && recipe.input02 == slot01) ||
+                    (recipe.altInput01 == slot02 && recipe.altInput02 == slot01) ||
+                    (recipe.altInput02 == slot02 && recipe.altInput01 == slot01))
+                {
+                    if(!Inventory.instance.HasItem(recipe.result))
+                    {
+                        items.Add(recipe.result);
+                    }
+                }
+            }
+            else
+            {
+                if(recipe.input03 == slot03)
+                {
+                    if(!Inventory.instance.HasItem(recipe.result))
+                    {
+                        items.Add(recipe.result);
+                    }
+                }
+            }
 		}
 
 		return items.ToArray();
@@ -146,25 +174,28 @@ public class Crafter : MonoBehaviour
 
 	Item[] GetResultsInInventory()
 	{
-		if (slot01 == null || slot02 == null)
-			return null;
+        if(slot01 == null || slot02 == null || slot03 == null)
+        {
+            return null;
+        }
 
 		List<Item> items = new List<Item>();
 
 		foreach (Recipe recipe in recipes)
 		{
-			if ((recipe.input01 == slot01 && recipe.input02 == slot02) ||
-				(recipe.input01 == slot02 && recipe.input02 == slot01) ||
-				(recipe.altInput01 == slot02 && recipe.altInput02 == slot01) ||
-				(recipe.altInput02 == slot02 && recipe.altInput01 == slot01) ||
-				(recipe.alt02Input01 == slot02 && recipe.alt02Input02 == slot01) ||
-				(recipe.alt02Input02 == slot02 && recipe.alt02Input01 == slot01))
-			{
-				if (Inventory.instance.HasItem(recipe.result))
-				{
-					items.Add(recipe.result);
-				}
-			}
+            if(slot03 == null)
+            {
+                if((recipe.input01 == slot01 && recipe.input02 == slot02) ||
+                (recipe.input01 == slot02 && recipe.input02 == slot01) ||
+                (recipe.altInput01 == slot02 && recipe.altInput02 == slot01) ||
+                (recipe.altInput02 == slot02 && recipe.altInput01 == slot01))
+                {
+                    if(Inventory.instance.HasItem(recipe.result))
+                    {
+                        items.Add(recipe.result);
+                    }
+                }
+            }
 		}
 
 		return items.ToArray();

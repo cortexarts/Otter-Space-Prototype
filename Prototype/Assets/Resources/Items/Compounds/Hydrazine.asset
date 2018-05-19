@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e042b4c80c76724aabd39a6d5dacf25, type: 3}
-  m_Name: NO
+  m_Name: Hydrazine
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: a95d4d18fa895934a9dcc10eff40c777, type: 3}
-  discoveryText: YOU MADE NO haha
-  discoveryTitle: NO
+  icon: {fileID: 21300000, guid: 3a5b3a28375ead34f9791457ff137efe, type: 3}
+  discoveryText: You've discovered Hydrazine!
+  discoveryTitle: Almost there!
   customColor: {r: 0, g: 0, b: 0, a: 1}
   customSound: 
   itemObject: {fileID: 0}

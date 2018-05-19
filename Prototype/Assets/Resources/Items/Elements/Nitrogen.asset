@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e042b4c80c76724aabd39a6d5dacf25, type: 3}
+  m_Name: Nitrogen
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 3b6892c518fead34c93b4d37ae05d39e, type: 3}
+  discoveryText: You've discovered Nitrogen! Nitrogen is a chemical element with symbol
+    N and atomic number 7. It belongs to group 15 of the periodic table.
+  discoveryTitle: Gas, gas, gas
+  customColor: {r: 0, g: 0, b: 0, a: 1}
+  customSound: 
+  itemObject: {fileID: 0}
