@@ -9,6 +9,15 @@ using Utility;
 public class Reactor : MonoBehaviour
 {
     public List<FuelObject> fuelObjects;
+    public Text header;
+    public enum FuelState
+    {
+        Elements = 0,
+        Couples = 1,
+        Compounds = 2,
+        Fuel = 3,
+        Oxidizer = 4
+    }
     public Button LiquidHydrogen;
     public Button Methane;
     public Button Hydrazine;
