@@ -664,7 +664,6 @@ GameObject:
   - component: {fileID: 167483541}
   - component: {fileID: 167483543}
   - component: {fileID: 167483542}
-  - component: {fileID: 167483544}
   m_Layer: 5
   m_Name: Panel_lab
   m_TagString: Untagged
@@ -728,38 +727,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 167483540}
---- !u!114 &167483544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 167483540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e8bdf118f72611479feb477cd41bbe9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuelObjects:
-  - {fileID: 11400000, guid: a0f104e3585a4a546957bd8f7ad7b264, type: 2}
-  - {fileID: 11400000, guid: a54763da2edd0e448b743f69680e89fb, type: 2}
-  - {fileID: 11400000, guid: 77a8bf6bbdb993b4cb8c4fc2c3c59358, type: 2}
-  - {fileID: 11400000, guid: ba0344d957c0f4443a1e78c4923eb7fa, type: 2}
-  - {fileID: 11400000, guid: a8a983486ff47c54fae16c6c046f298c, type: 2}
-  header: {fileID: 0}
-  LiquidHydrogen: {fileID: 0}
-  Methane: {fileID: 0}
-  Hydrazine: {fileID: 0}
-  LiquidOxygen: {fileID: 0}
-  Coal: {fileID: 0}
-  buttons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  resultPopUp: {fileID: 0}
-  resultHeaderText: {fileID: 0}
-  resultText: {fileID: 0}
-  maxDistance: 75
 --- !u!1 &172260168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1602,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00001135438}
   m_SizeDelta: {x: 4, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &296728175
@@ -4254,7 +4221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6745098, g: 0.58431375, b: 0.4862745, a: 1}
+  m_Color: {r: 0.34117648, g: 0.33333334, b: 0.32156864, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5254,8 +5221,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1973130576}
   m_HandleRect: {fileID: 1973130575}
   m_Direction: 2
-  m_Value: 0.9999993
-  m_Size: 0.9263689
+  m_Value: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10730,8 +10697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29170844, y: 0.16021375}
   m_AnchorMax: {x: 0.70400006, y: 0.64821374}
-  m_AnchoredPosition: {x: 2.4493713, y: -8.817261}
-  m_SizeDelta: {x: 468.3827, y: 30.850403}
+  m_AnchoredPosition: {x: 0, y: -40}
+  m_SizeDelta: {x: 500, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1467371142
 MonoBehaviour:
@@ -14470,7 +14437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.814687}
   m_AnchorMax: {x: 0.5, y: 0.814687}
-  m_AnchoredPosition: {x: -0.0018536801, y: 3.9187927}
+  m_AnchoredPosition: {x: -0.0018536801, y: -10}
   m_SizeDelta: {x: 772.4, y: 119.100006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1991151030
