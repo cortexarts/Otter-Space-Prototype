@@ -29,12 +29,16 @@ public class Discoveries : MonoBehaviour {
 
 	public Color standardBackgroundColor;
 
+    private ProgressManager progressManager;
+    private FuelObject[] fuelObjects;
 	private bool isDiscovering = false;
 
 	private void Start()
 	{
-		discoveredItems = new List<Item>();
-	}
+        progressManager = FindObjectOfType<ProgressManager>();
+        discoveredItems = new List<Item>();
+        fuelObjects = Resources.LoadAll<FuelObject>("Fuel");
+    }
 
 	public bool HasDiscovered (Item item)
 	{
@@ -52,6 +56,14 @@ public class Discoveries : MonoBehaviour {
 		}
 	
 		discoveredItems.Add(item);
+
+        for(int i = 0; i < fuelObjects.Length; i++)
+        {
+            if(item.name == fuelObjects[i].name)
+            {
+                progressManager.AddDiscoveredFuel(fuelObjects[i]);
+            }
+        }
 	}
 
 	public void OpenDiscoveryPanel (Item item)

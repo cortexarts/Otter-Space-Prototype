@@ -28,11 +28,11 @@ public class FuelTypeButton : MonoBehaviour
 
     public void UpdateImage()
     {
-        if(progressManager.currentFuelType.name == "Kerosene")
+        if(progressManager.GetCurrentFuel().name == "Kerosene")
         {
             currentFuelTypeImage.sprite = kerosene;
         }
-        else if(progressManager.currentFuelType.name == "Hydrogen")
+        else if(progressManager.GetCurrentFuel().name == "Hydrogen")
         {
             currentFuelTypeImage.sprite = hydrogen;
         }
@@ -54,7 +54,7 @@ public class FuelTypeButton : MonoBehaviour
     {
         if(fuelTypeContainer.activeInHierarchy)
         {
-            progressManager.currentFuelType = fuel;
+            progressManager.SetCurrentFuel(fuel);
             ToggleFuelContainer();
             UpdateImage();
         }

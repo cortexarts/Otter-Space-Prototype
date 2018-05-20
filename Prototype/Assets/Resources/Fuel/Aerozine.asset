@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19710a67a7593154da690ebdb6fea24e, type: 3}
   m_Name: Aerozine
   m_EditorClassIdentifier: 
-  fuelName: Aerozine 50
+  fuelName: Aerozine
   fuelDescription: A 50/50 mix of Hydrazine (H2N-N) and Unsymmetrical dimethylhydrazine
     H2NN(CH3)2 create a liquid propellant called Aerozine 50.
   fuelFormula: C2H12N4
