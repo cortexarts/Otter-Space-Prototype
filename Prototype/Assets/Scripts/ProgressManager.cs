@@ -34,6 +34,11 @@ public class ProgressManager : MonoBehaviour
         return m_currentFuel;
     }
 
+    public List<FuelObject>  GetDiscoveredFuel()
+    {
+        return m_discoveredFuel;
+    }
+
     public void AddDiscoveredFuel(FuelObject fuelObject)
     {
         // Only add fuel if it isn't discovered yet

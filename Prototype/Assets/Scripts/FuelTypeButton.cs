@@ -5,8 +5,21 @@ using UnityEngine.UI;
 
 public class FuelTypeButton : MonoBehaviour
 {
+    public Sprite undiscovered;
     public Sprite kerosene;
     public Sprite hydrogen;
+    public Sprite diesel;
+    public Sprite rp1;
+    public Sprite lox;
+    public Sprite coal;
+    public Sprite aerozine;
+    public Image buttonKerosene;
+    public Image buttonDiesel;
+    public Image buttonLiquidHydrogen;
+    public Image buttonRP1;
+    public Image buttonLOX;
+    public Image buttonCoal;
+    public Image buttonAerozine;
     public Image currentFuelTypeImage;
     public GameObject fuelTypeContainer;
 
@@ -18,6 +31,7 @@ public class FuelTypeButton : MonoBehaviour
         progressManager = FindObjectOfType<ProgressManager>();
 
         UpdateImage();
+        UpdateFuelButtons();
     }
 	
 	// Update is called once per frame
@@ -28,6 +42,68 @@ public class FuelTypeButton : MonoBehaviour
 
     public void UpdateImage()
     {
+        switch(progressManager.GetCurrentFuel().name)
+        {
+            case "Kersone":
+                currentFuelTypeImage.sprite = kerosene;
+                break;
+            case "Hydrogen":
+                currentFuelTypeImage.sprite = hydrogen;
+                break;
+            case "Coal":
+                currentFuelTypeImage.sprite = coal;
+                break;
+            case "LOX":
+                currentFuelTypeImage.sprite = lox;
+                break;
+            case "RP1":
+                currentFuelTypeImage.sprite = rp1;
+                break;
+            case "Aerozine":
+                currentFuelTypeImage.sprite = aerozine;
+                break;
+            case "Diesel":
+                currentFuelTypeImage.sprite = diesel;
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void UpdateFuelButtons()
+    {
+        List<FuelObject> discoveredFuel = progressManager.GetDiscoveredFuel();
+
+        for(int i = 0; i < discoveredFuel.Count; i++)
+        {
+            switch(discoveredFuel[i].fuelName)
+            {
+                case "Kersone":
+                    buttonKerosene.sprite = kerosene;
+                    break;
+                case "Hydrogen":
+                    buttonLiquidHydrogen.sprite = hydrogen;
+                    break;
+                case "Coal":
+                    buttonCoal.sprite = coal;
+                    break;
+                case "LOX":
+                    buttonLOX.sprite = lox;
+                    break;
+                case "RP1":
+                    buttonRP1.sprite = rp1;
+                    break;
+                case "Aerozine":
+                    buttonAerozine.sprite = aerozine;
+                    break;
+                case "Diesel":
+                    buttonDiesel.sprite = diesel;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         if(progressManager.GetCurrentFuel().name == "Kerosene")
         {
             currentFuelTypeImage.sprite = kerosene;
@@ -37,7 +113,7 @@ public class FuelTypeButton : MonoBehaviour
             currentFuelTypeImage.sprite = hydrogen;
         }
     }
-    
+
     public void ToggleFuelContainer()
     {
         if(fuelTypeContainer.activeInHierarchy)
