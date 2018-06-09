@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f0601b16a0346645bf1e4b05a0df36c, type: 3}
-  m_Name: Actinium
+  m_Name: Fluorine
   m_EditorClassIdentifier: 
-  m_Symbol: Ac
-  m_Number: 89
-  m_Color: {r: 0.73333335, g: 0.42745098, b: 0.8, a: 1}
+  m_Symbol: F
+  m_Number: 9
+  m_Color: {r: 0.56078434, g: 0.9882353, b: 0.22745098, a: 1}
   m_IsDiscovered: 0
-  m_Column: 20
-  m_Period: 1
+  m_Column: 17
+  m_Period: 2
