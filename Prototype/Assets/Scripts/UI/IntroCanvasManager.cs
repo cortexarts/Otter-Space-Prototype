@@ -12,13 +12,11 @@ public class IntroCanvasManager : MonoBehaviour
     public GameObject panelLab;
     public GameObject panelNotebook;
 
-    private MenuManager menuManager;
     private CameraController cameraController;
 
     // Use this for initialization
     void Start ()
     {
-        menuManager = GetComponent<MenuManager>();
         cameraController = FindObjectOfType<CameraController>();
         currentState = State.Default;
         ToNextState();

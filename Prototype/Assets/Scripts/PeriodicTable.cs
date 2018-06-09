@@ -13,7 +13,7 @@ public class PeriodicTable : MonoBehaviour
     [SerializeField]
     private Transform[] m_Columns;
 
-    private PeriodicTableItem[,] m_TableArray = new PeriodicTableItem[18,7];
+    private PeriodicTableItem[,] m_ColumnTableArray = new PeriodicTableItem[20, 15];
 
     // Use this for initialization
     void Start ()
@@ -22,16 +22,16 @@ public class PeriodicTable : MonoBehaviour
 
         for(int i = 0; i < m_Elements.Length; i++)
         {
-            m_TableArray[m_Elements[i].GetColumn() - 1, m_Elements[i].GetPeriod() - 1] = m_Elements[i];
+            m_ColumnTableArray[m_Elements[i].GetColumn() - 1, m_Elements[i].GetPeriod() - 1] = m_Elements[i];
         }
 
         for(int i = 0; i < 18; i++)
         {
             for(int j = 0; j < 7; j++)
             {
-                if(m_TableArray[i, j] != null)
+                if(m_ColumnTableArray[i, j] != null)
                 {
-                    AddElement(m_TableArray[i, j], m_Columns[i]);
+                    AddElement(m_ColumnTableArray[i, j], m_Columns[i]);
                 }
                 else
                 {
@@ -40,26 +40,20 @@ public class PeriodicTable : MonoBehaviour
             }
         }
 
-        //for(int i = 0; i < 18; i++)
-        //{
-        //    for(int j = 0; j < 7; j++)
-        //    {
-        //        bool exists = false;
-        //        for(int k = 0; k < m_Elements.Length; k++)
-        //        {
-        //            if(m_Elements[k].GetColumn() == i && m_Elements[k].GetPeriod() == j)
-        //            {
-        //                exists = true;
-        //                AddElement(m_Elements[k]);
-        //            }
-        //        }
-
-        //        if(!exists)
-        //        {
-        //            AddPlaceholder();
-        //        }
-        //    }
-        //}
+        for(int i = 18; i < 20; i++)
+        {
+            for(int j = 0; j < 15; j++)
+            {
+                if(m_ColumnTableArray[i, j] != null)
+                {
+                    AddElement(m_ColumnTableArray[i, j], m_Columns[i]);
+                }
+                else
+                {
+                    AddPlaceholder(m_Columns[i]);
+                }
+            }
+        }
     }
 	
 	// Update is called once per frame
@@ -82,6 +76,6 @@ public class PeriodicTable : MonoBehaviour
 
     public void AddPlaceholder(Transform transform)
     {
-        GameObject placeholder = Instantiate(m_Placeholder, transform);
+        Instantiate(m_Placeholder, transform);
     }
 }
