@@ -15670,6 +15670,7 @@ MonoBehaviour:
   panelAnimation: {fileID: 1245409609}
   panelHUD: {fileID: 550653714}
   panelLab: {fileID: 167483540}
+  panelNotebook: {fileID: 38792767}
 --- !u!1 &1725309873
 GameObject:
   m_ObjectHideFlags: 0

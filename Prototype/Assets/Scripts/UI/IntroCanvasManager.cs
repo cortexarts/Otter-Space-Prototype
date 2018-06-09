@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class IntroCanvasManager : MonoBehaviour
 {
-    public enum State { Default, Controls, Animation, Crafting, Playing };
+    public enum State { Default, Controls, Animation, Crafting, Reading, Playing };
     public State currentState;
     public GameObject panelControls;
     public GameObject panelAnimation;
     public GameObject panelHUD;
     public GameObject panelLab;
+    public GameObject panelNotebook;
 
     private MenuManager menuManager;
     private CameraController cameraController;
@@ -45,6 +46,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelAnimation.SetActive(false);
                 panelHUD.SetActive(false);
                 panelLab.SetActive(false);
+                panelNotebook.SetActive(false);
                 cameraController.isZooming = false;
                 currentState = State.Controls;
                 break;
@@ -53,6 +55,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelHUD.SetActive(false);
                 panelAnimation.SetActive(true);
                 panelLab.SetActive(false);
+                panelNotebook.SetActive(false);
                 cameraController.isZooming = false;
                 currentState = State.Animation;
                 break;
@@ -61,14 +64,25 @@ public class IntroCanvasManager : MonoBehaviour
                 panelAnimation.SetActive(false);
                 panelHUD.SetActive(false);
                 panelLab.SetActive(true);
+                panelNotebook.SetActive(false);
                 cameraController.isZooming = false;
                 currentState = State.Crafting;
                 break;
             case State.Crafting:
                 panelControls.SetActive(false);
                 panelAnimation.SetActive(false);
+                panelHUD.SetActive(false);
+                panelLab.SetActive(false);
+                panelNotebook.SetActive(true);
+                cameraController.isZooming = false;
+                currentState = State.Reading;
+                break;
+            case State.Reading:
+                panelControls.SetActive(false);
+                panelAnimation.SetActive(false);
                 panelHUD.SetActive(true);
                 panelLab.SetActive(false);
+                panelNotebook.SetActive(false);
                 cameraController.isZooming = true;
                 currentState = State.Playing;
                 break;
