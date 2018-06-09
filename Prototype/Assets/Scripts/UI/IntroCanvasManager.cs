@@ -26,11 +26,11 @@ public class IntroCanvasManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(Input.GetKey(KeyCode.Return))
+        if(Input.GetKeyUp(KeyCode.Return))
         {
             ToNextState();
         }
-        if(Input.GetKey(KeyCode.Backspace))
+        if(Input.GetKeyUp(KeyCode.Backspace))
         {
             ToPreviousState();
         }
