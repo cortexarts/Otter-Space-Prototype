@@ -11,7 +11,7 @@ public class PeriodicTable : MonoBehaviour
     [SerializeField]
     private GameObject m_Placeholder;
     [SerializeField]
-    private Transform m_Table;
+    private Transform[] m_Columns;
 
     private PeriodicTableItem[,] m_TableArray = new PeriodicTableItem[18,7];
 
@@ -31,11 +31,11 @@ public class PeriodicTable : MonoBehaviour
             {
                 if(m_TableArray[i, j] != null)
                 {
-                    AddElement(m_TableArray[i, j]);
+                    AddElement(m_TableArray[i, j], m_Columns[i]);
                 }
                 else
                 {
-                    AddPlaceholder();
+                    AddPlaceholder(m_Columns[i]);
                 }
             }
         }
@@ -68,9 +68,9 @@ public class PeriodicTable : MonoBehaviour
 		
 	}
 
-    public void AddElement(PeriodicTableItem a_Element)
+    public void AddElement(PeriodicTableItem a_Element, Transform transform)
     {
-        GameObject element = Instantiate(m_ElementPrefab, m_Table);
+        GameObject element = Instantiate(m_ElementPrefab, transform);
 
         PeriodicTableDisplay display = element.GetComponent<PeriodicTableDisplay>();
 
@@ -80,8 +80,8 @@ public class PeriodicTable : MonoBehaviour
         }
     }
 
-    public void AddPlaceholder()
+    public void AddPlaceholder(Transform transform)
     {
-        GameObject placeholder = Instantiate(m_Placeholder, m_Table);
+        GameObject placeholder = Instantiate(m_Placeholder, transform);
     }
 }
