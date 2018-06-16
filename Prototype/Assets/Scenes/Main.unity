@@ -10336,7 +10336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bf6ec8c4dcfab47bda57c78ad27e51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LayerPositions: 0f000000140000001e000000
+  m_LayerOffsets: 0a0000000f0000001e000000
   m_StarsPerLayer: 96000000fa000000c8000000
   m_StarSize: 0.2
   m_StarDistance: 50
