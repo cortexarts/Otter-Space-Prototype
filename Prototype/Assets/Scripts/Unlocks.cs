@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unlocks : MonoBehaviour {
+public class Unlocks : MonoBehaviour
+{
 
 	#region Singleton
 
@@ -15,10 +16,7 @@ public class Unlocks : MonoBehaviour {
 
 	#endregion
 
-	private Inventory inventory;
-
 	public List<Reward> rewards;
-
 	public Item armyDefeatItem;
 	public Item castleDefeatItem;
 	public Item wizardItem;
@@ -33,8 +31,9 @@ public class Unlocks : MonoBehaviour {
 
 	private bool wizardAdded = false;
 	private bool enemiesAdded = false;
+    private Inventory inventory;
 
-	private void Start()
+    private void Start()
 	{
 		inventory = Inventory.instance;
 		rewards = new List<Reward>(Resources.LoadAll<Reward>("Rewards"));
