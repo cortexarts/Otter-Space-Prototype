@@ -15,34 +15,29 @@ public class MissileBehaviour : MonoBehaviour
     // Handle camera shaking
     public float camShakeAmt = 0.05f;
     public float camShakeLength = 0.1f;
-    //CameraShake camShake;
+    CameraShake camShake;
 
     private Rigidbody2D m_Rigidbody2D;
 
     public GameObject Shockwave;
     public GameObject AsteroidExplosion;
-    //public GameObject IronOre;
+    public GameObject IronOre;
 
     // Use this for initialization
     void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-       //camShake = Camera.main.GetComponent<CameraShake>();
-        //if (camShake == null)
-        //{
-        //    Debug.LogError("No CameraShake script found.");
-        //}
+        camShake = Camera.main.GetComponent<CameraShake>();
+        if (camShake == null)
+        {
+            Debug.LogError("No CameraShake script found.");
+        }
     }
 
-    public void SetAnswer(int value)
+    void SetAnswer(int value)
     {
         answer = value;
-    }
-
-    public void AddVelocity(float value)
-    {
-        m_Velocity += value;
     }
 
     // Update is called once per frame
@@ -53,8 +48,13 @@ public class MissileBehaviour : MonoBehaviour
         if (lifeTime > maxLifeTime)
         {
             Instantiate(AsteroidExplosion, this.gameObject.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            DestroyObject(this.gameObject);
         }
+    }
+
+    public void AddVelocity(float a_Velocity)
+    {
+        m_Velocity += a_Velocity;
     }
 
     private void FixedUpdate()
@@ -73,9 +73,9 @@ public class MissileBehaviour : MonoBehaviour
             if (collider.GetComponent<AsteroidValues>().answer == answer)
             {
                 rocketShooting.numCorrectAnswers++;
-                Destroy(collider.gameObject);
-                //camShake.Shake(camShakeAmt, camShakeLength);
-                //Instantiate(IronOre, this.gameObject.transform.position, Quaternion.identity);
+                DestroyObject(collider.gameObject);
+                camShake.Shake(camShakeAmt, camShakeLength);
+                Instantiate(IronOre, this.gameObject.transform.position, Quaternion.identity);
             }
 
             if (rocketShooting.numCorrectAnswers == 3)
@@ -88,7 +88,7 @@ public class MissileBehaviour : MonoBehaviour
                 Instantiate(AsteroidExplosion, this.gameObject.transform.position, Quaternion.identity);
             }
 
-            Destroy(gameObject);
+            DestroyObject(this.gameObject);
         }
     }
 }
