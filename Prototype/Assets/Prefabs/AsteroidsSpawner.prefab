@@ -52,13 +52,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountExtrema: {x: 5, y: 10}
-  offsetExtrema: {x: 10, y: 20}
-  scaleExtrema: {x: 2, y: 4}
-  offset: 1.5
+  offsetExtrema: {x: 20, y: 40}
+  scaleExtrema: {x: 8, y: 16}
+  offset: 5
   asteroidPrefab: {fileID: 1934805013521798, guid: 468396f3f187a03448b1e38e7052ad7e,
     type: 2}
   asteroids: []
-  TextSize: 10
+  TextSize: 25
   difficulty: 0
   valueAnswerMin: 0
   valueAnswerMax: 10

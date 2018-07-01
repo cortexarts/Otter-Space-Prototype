@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 114603641161630112}
   - component: {fileID: 114717769533664462}
   - component: {fileID: 114694644325752764}
+  - component: {fileID: 58270395369696632}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -119,6 +120,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58270395369696632
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934805013521798}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08
 --- !u!58 &58665951872495318
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -241,7 +257,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934805013521798}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14d52a98257e2f04094d954a5a84b3a3, type: 3}
   m_Name: 
@@ -361,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63389b51b69e5584f8a89b637f321123, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistanceToRocket: 20
+  maxDistanceToRocket: 100
 --- !u!212 &212662297391578192
 SpriteRenderer:
   m_ObjectHideFlags: 1
