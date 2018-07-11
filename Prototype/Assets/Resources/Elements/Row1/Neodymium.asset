@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f0601b16a0346645bf1e4b05a0df36c, type: 3}
-  m_Name: Iron
+  m_Name: Neodymium
   m_EditorClassIdentifier: 
-  m_Symbol: Fe
-  m_Number: 26
-  m_Color: {r: 0.41568628, g: 0.34509805, b: 0.41960785, a: 1}
+  m_Symbol: Nd
+  m_Number: 60
+  m_Color: {r: 0.8, g: 0.5411765, b: 0.42745098, a: 1}
   m_IsDiscovered: 0
-  m_Column: 8
+  m_Column: 19
   m_Period: 4

@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f0601b16a0346645bf1e4b05a0df36c, type: 3}
   m_Name: Manganese
   m_EditorClassIdentifier: 
-  m_Symbol: Fe
-  m_Number: 26
+  m_Symbol: Mn
+  m_Number: 25
   m_Color: {r: 0.41568628, g: 0.34509805, b: 0.41960785, a: 1}
   m_IsDiscovered: 0
   m_Column: 7

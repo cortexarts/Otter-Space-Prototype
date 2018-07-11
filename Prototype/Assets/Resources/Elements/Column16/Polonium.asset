@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f0601b16a0346645bf1e4b05a0df36c, type: 3}
-  m_Name: Iron
+  m_Name: Polonium
   m_EditorClassIdentifier: 
-  m_Symbol: Fe
-  m_Number: 26
-  m_Color: {r: 0.41568628, g: 0.34509805, b: 0.41960785, a: 1}
+  m_Symbol: Po
+  m_Number: 84
+  m_Color: {r: 0.2509804, g: 1, b: 0.62352943, a: 1}
   m_IsDiscovered: 0
-  m_Column: 8
-  m_Period: 4
+  m_Column: 16
+  m_Period: 6

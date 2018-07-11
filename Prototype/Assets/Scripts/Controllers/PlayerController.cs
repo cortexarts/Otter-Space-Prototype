@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     public float GetVelocity()
     {
         float velocity = rigidBody2D.velocity.magnitude;
+
         return velocity;
     }
 
