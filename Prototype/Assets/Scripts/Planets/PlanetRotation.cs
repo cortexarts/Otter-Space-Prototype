@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlanetRotation : MonoBehaviour
 {
-    public float rotationSpeed = 1.0f;
+    [SerializeField]
+    private float rotationSpeed = 1.0f;
 
 	// Use this for initialization
 	void Start ()
@@ -18,6 +19,7 @@ public class PlanetRotation : MonoBehaviour
 		
 	}
 
+    // FixedUpdate is called every fixed framerate frame, if the MonoBehaviour is enabled.
     private void FixedUpdate()
     {
         transform.Rotate(Vector3.back * Time.deltaTime * rotationSpeed, Space.World);

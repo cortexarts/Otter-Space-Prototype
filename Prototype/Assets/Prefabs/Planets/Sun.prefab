@@ -24,11 +24,10 @@ GameObject:
   - component: {fileID: 50521330224654800}
   - component: {fileID: 58684565285358122}
   - component: {fileID: 250751253325383792}
-  - component: {fileID: 114297542140111958}
   - component: {fileID: 114353514102963546}
   - component: {fileID: 114550528389299768}
   m_Layer: 0
-  m_Name: Mars
+  m_Name: Sun
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +80,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 19
+  m_Radius: 46
 --- !u!58 &58684565285358122
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -96,23 +95,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 30
---- !u!114 &114297542140111958
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1838734011984202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675198b0686fa3a42b140d0e6400234a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  center: {fileID: 0}
-  axis: {x: 0, y: 0, z: -1}
-  radius: 200
-  radiusSpeed: 0.5
-  rotationSpeed: 0.5
+  m_Radius: 80
 --- !u!114 &114353514102963546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -173,12 +156,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: abb6913dbd3376c46ba2b709cc14b835, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 64a66295035766c4ea3bf0a92543a53b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6, y: 6}
+  m_Size: {x: 5.51, y: 5.51}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -195,7 +178,7 @@ PointEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceMagnitude: -12
+  m_ForceMagnitude: -50
   m_ForceVariation: 0
   m_DistanceScale: 1
   m_ForceSource: 0
