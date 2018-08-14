@@ -15,8 +15,18 @@ public class PeriodicTableDisplay : MonoBehaviour
     public void Setup(PeriodicTableItem a_Item)
     {
         m_Item = a_Item;
-        m_Symbol.text = a_Item.GetSymbol();
-        m_Number.text = a_Item.GetNumber().ToString();
-        GetComponent<Image>().color = m_Item.GetColor();
+
+        if(m_Item.GetDiscoveredStatus())
+        {
+            m_Symbol.text = a_Item.GetSymbol();
+            m_Number.text = a_Item.GetNumber().ToString();
+            GetComponent<Image>().color = m_Item.GetColor();
+        }
+        else
+        {
+            m_Symbol.text = "?";
+            m_Number.text = a_Item.GetNumber().ToString();
+            GetComponent<Image>().color = Color.grey;
+        }
     }
 }
