@@ -19,16 +19,4 @@ public class FuelObject : ScriptableObject
     public FuelTypes fuelType;
     public List<string> elements;
     public float fuelLevel;
-
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 }
