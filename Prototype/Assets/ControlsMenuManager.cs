@@ -75,8 +75,8 @@ public class ControlsMenuManager : MonoBehaviour
                 dot.transform.parent = m_DotsDisplay.transform;
                 dot.AddComponent<RectTransform>();
                 dot.GetComponent<RectTransform>().localScale = Vector3.one;
-                dot.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 12.0f);
-                dot.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 12.0f);
+                dot.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 16.0f);
+                dot.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 16.0f);
                 dot.GetComponent<RectTransform>().parent = m_DotsDisplay.transform;
                 dot.AddComponent<Image>();
                 dot.GetComponent<Image>().sprite = m_Dot;
