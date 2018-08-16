@@ -78,14 +78,14 @@ public class Discoveries : MonoBehaviour {
 		{
 			int rndm = Random.Range(0, 2);
 			if (rndm == 0)
-				AudioManager.m_Instance.Play("HappyChord01");
+				AudioManager.m_Instance.PlaySound("HappyChord01");
 			else if (rndm == 1)
-				AudioManager.m_Instance.Play("HappyChord02");
+				AudioManager.m_Instance.PlaySound("HappyChord02");
 			else
-				AudioManager.m_Instance.Play("HappyChord03");
+				AudioManager.m_Instance.PlaySound("HappyChord03");
 		} else
 		{
-			AudioManager.m_Instance.Play(item.customSound);
+			AudioManager.m_Instance.PlaySound(item.customSound);
 		}
 
 		isDiscovering = true;
@@ -113,7 +113,7 @@ public class Discoveries : MonoBehaviour {
 
 	public void CloseDiscoveryPanel ()
 	{
-		AudioManager.m_Instance.Play("Click");
+		AudioManager.m_Instance.PlaySound("Click");
 
 		if (nextToDiscover.Count > 0)
 		{

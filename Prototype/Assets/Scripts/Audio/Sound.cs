@@ -1,5 +1,6 @@
-using UnityEngine.Audio;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [System.Serializable]
 public class Sound
@@ -30,12 +31,9 @@ public class Sound
     private bool m_Loop = false;
 
     [SerializeField]
-    private bool m_Music = false;
+    private List<string> m_Scenes;
 
-    [SerializeField]
     private AudioMixerGroup m_Mixer;
-
-    [SerializeField]
     private AudioSource m_Source;
 
     public Sound()
@@ -43,13 +41,13 @@ public class Sound
 
     }
 
-    public Sound(string a_Name, float a_Volume, float a_Pitch, bool a_Loop, bool a_Music, AudioMixerGroup a_Mixer, AudioSource a_Source)
+    public Sound(string a_Name, float a_Volume, float a_Pitch, bool a_Loop, string a_Scene, AudioMixerGroup a_Mixer, AudioSource a_Source)
     {
         m_Name = a_Name;
         m_Volume = a_Volume;
         m_Pitch = a_Pitch;
         m_Loop = a_Loop;
-        m_Music = a_Music;
+        m_Scenes.Add(a_Scene);
         m_Mixer = a_Mixer;
         m_Source = a_Source;
     }
@@ -82,11 +80,6 @@ public class Sound
     public void SetLoop(bool a_Loop)
     {
         m_Loop = a_Loop;
-    }
-
-    public void SetMusic(bool a_Music)
-    {
-        m_Music = a_Music;
     }
 
     public void SetMixer(AudioMixerGroup a_Mixer)
@@ -129,9 +122,9 @@ public class Sound
         return m_Loop;
     }
 
-    public bool GetMusic()
+    public List<string> GetScenes()
     {
-        return m_Music;
+        return m_Scenes;
     }
 
     public AudioClip GetClip()
