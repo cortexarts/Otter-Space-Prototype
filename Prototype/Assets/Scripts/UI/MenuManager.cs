@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    #region Singleton
+
+    public static MenuManager m_Instance;
+
+    private void Awake()
+    {
+        m_Instance = this;
+    }
+
+    #endregion
+
     public GameObject optionsPanel;
     public GameObject pausePanel;
     public bool isPaused = false;
@@ -20,7 +31,7 @@ public class MenuManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (CrossPlatformInputManager.GetButtonDown("Cancel"))
+        if(Input.GetKeyUp(KeyCode.Escape))
         {
             TogglePause();
         }

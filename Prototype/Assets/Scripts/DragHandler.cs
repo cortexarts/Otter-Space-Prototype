@@ -37,7 +37,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
 		canvasGroup.blocksRaycasts = false;
 
-		AudioManager.instance.Play("Clock");
+		AudioManager.m_Instance.Play("Clock");
 	}
 
 	public void OnDrag(PointerEventData eventData)
@@ -56,6 +56,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 			transform.SetParent(startParent);
 		}
 
-		AudioManager.instance.Play("Unclick");
+		AudioManager.m_Instance.Play("Unclick");
 	}
 }
