@@ -14,6 +14,7 @@ public enum FuelTypes
 public class FuelObject : ScriptableObject
 {
     public string fuelName;
+    [TextArea]
     public string fuelDescription;
     public string fuelFormula;
     public FuelTypes fuelType;

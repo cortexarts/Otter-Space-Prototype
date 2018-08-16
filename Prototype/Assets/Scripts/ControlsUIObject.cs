@@ -7,5 +7,6 @@ public class ControlsUIObject : ScriptableObject
 {
     public Sprite m_Sprite;
     public string m_Title;
+    [TextArea]
     public string m_Description;
 }

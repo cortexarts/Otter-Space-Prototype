@@ -20,7 +20,7 @@ public class RocketShooting : MonoBehaviour
     void Start ()
     {
         Value = ValueMin;
-        TextValue.text = Value.ToString();
+        //TextValue.text = Value.ToString();
     }
 
     // Update is called once per frame

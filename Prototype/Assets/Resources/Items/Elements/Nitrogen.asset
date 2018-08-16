@@ -3,7 +3,7 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Nitrogen
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 3b6892c518fead34c93b4d37ae05d39e, type: 3}
+  m_Symbol: N
   discoveryText: You've discovered Nitrogen! Nitrogen is a chemical element with symbol
     N and atomic number 7. It belongs to group 15 of the periodic table.
   discoveryTitle: Gas, gas, gas

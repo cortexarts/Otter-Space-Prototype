@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class PeriodicTable : MonoBehaviour
 {
+    #region Singleton
+
+    public static PeriodicTable instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     [SerializeField]
     private PeriodicTableItem[] m_Elements;
     [SerializeField]
@@ -14,10 +25,12 @@ public class PeriodicTable : MonoBehaviour
     private Transform[] m_Columns;
 
     private PeriodicTableItem[,] m_ColumnTableArray = new PeriodicTableItem[20, 15];
+    private List<GameObject> m_Items;
 
     // Use this for initialization
     void Start ()
     {
+        m_Items = new List<GameObject>();
         m_Elements = Resources.LoadAll<PeriodicTableItem>("Elements");
 
         for(int i = 0; i < m_Elements.Length; i++)
@@ -72,10 +85,40 @@ public class PeriodicTable : MonoBehaviour
         {
             display.Setup(a_Element);
         }
+
+        m_Items.Add(element);
     }
 
     public void AddPlaceholder(Transform transform)
     {
         Instantiate(m_Placeholder, transform);
+    }
+
+    public void CheckDiscoveredStatusWithSymbol(string a_Symbol)
+    {
+        for(int i = 0; i < m_Items.Count; i++)
+        {
+            if(m_Items[i].GetComponent<PeriodicTableDisplay>().GetItem().GetSymbol() == a_Symbol)
+            {
+                if(m_Items[i].GetComponent<PeriodicTableDisplay>().GetItem().GetDiscoveredStatus() == false)
+                {
+                    m_Items[i].GetComponent<PeriodicTableDisplay>().SetDiscovered(true);
+                }
+            }
+        }
+    }
+
+    public void CheckDiscoveredStatus(PeriodicTableItem a_Element)
+    {
+        for(int i = 0; i < m_Items.Count; i++)
+        {
+            if(m_Items[i].GetComponent<PeriodicTableDisplay>().GetItem().GetSymbol() == a_Element.GetSymbol())
+            {
+                if(m_Items[i].GetComponent<PeriodicTableDisplay>().GetItem().GetDiscoveredStatus() == false)
+                {
+                    m_Items[i].GetComponent<PeriodicTableDisplay>().SetDiscovered(true);
+                }
+            }
+        }
     }
 }

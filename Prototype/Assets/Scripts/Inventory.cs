@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+public class Inventory : MonoBehaviour
+{
 
 	#region Singleton
 
@@ -29,19 +30,24 @@ public class Inventory : MonoBehaviour {
 		}
 	}
 
-	public void AddItem (Item item, bool startItem)
+	public void AddItem(Item item, bool startItem)
 	{
-		//Debug.Log("Add item: " + item.name);
+		Debug.Log("Add item: " + item.name);
 		AssignItem(item);
 
 		GameObject itemObj = Instantiate(itemPrefab, itemPool);
 		ItemDisplay display = itemObj.GetComponent<ItemDisplay>();
-		if (display != null)
-			display.Setup(item);
 
-		if (startItem)
-			itemObj.GetComponent<Animator>().SetBool("StartIdle", true);
-	}
+        if(display != null)
+        {
+            display.Setup(item);
+        }
+
+        if(startItem)
+        {
+            itemObj.GetComponent<Animator>().SetBool("StartIdle", true);
+        }
+    }
 
 	public void AssignItem (Item item)
 	{
@@ -65,4 +71,11 @@ public class Inventory : MonoBehaviour {
 		return items.Count;
 	}
 
+    public void CheckItems()
+    {
+        for(int i = 0; i < items.Count; i++)
+        {
+            PeriodicTable.instance.CheckDiscoveredStatusWithSymbol(items[i].m_Symbol);
+        }
+    }
 }

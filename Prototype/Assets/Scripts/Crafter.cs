@@ -95,6 +95,8 @@ public class Crafter : MonoBehaviour
 				CreateGhostItem(result);
 			}
 		}
+
+        Inventory.instance.CheckItems();
 	}
 
 	void CreateItem (Item item)

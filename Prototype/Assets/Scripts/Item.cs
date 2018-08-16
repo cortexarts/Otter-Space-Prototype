@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item : ScriptableObject {
 
 	public Sprite icon;
+    public string m_Symbol;
 	[TextArea]
 	public string discoveryText;
 	public string discoveryTitle;

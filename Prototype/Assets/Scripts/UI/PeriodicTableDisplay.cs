@@ -29,4 +29,17 @@ public class PeriodicTableDisplay : MonoBehaviour
             GetComponent<Image>().color = Color.grey;
         }
     }
+
+    public PeriodicTableItem GetItem()
+    {
+        return m_Item;
+    }
+
+    public void SetDiscovered(bool a_Status)
+    {
+        m_Item.SetDiscoveredStatus(true);
+        m_Symbol.text = m_Item.GetSymbol();
+        m_Number.text = m_Item.GetNumber().ToString();
+        GetComponent<Image>().color = m_Item.GetColor();
+    }
 }
