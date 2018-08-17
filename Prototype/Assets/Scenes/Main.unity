@@ -157,32 +157,6 @@ Prefab:
       propertyPath: center
       value: 
       objectReference: {fileID: 1946132942}
-    - target: {fileID: 114297542140111958, guid: e85a40dfb411d2a4ea581f5311ab8589,
-        type: 2}
-      propertyPath: radius
-      value: 463.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 212021227053349118, guid: e85a40dfb411d2a4ea581f5311ab8589,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 2c9f58ccbeb75704ea3061004057de3c,
-        type: 3}
-    - target: {fileID: 212021227053349118, guid: e85a40dfb411d2a4ea581f5311ab8589,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 5.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212021227053349118, guid: e85a40dfb411d2a4ea581f5311ab8589,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 5.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212021227053349118, guid: e85a40dfb411d2a4ea581f5311ab8589,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e85a40dfb411d2a4ea581f5311ab8589, type: 2}
   m_IsPrefabAsset: 0
@@ -804,7 +778,7 @@ GameObject:
   - component: {fileID: 132153934}
   - component: {fileID: 132153935}
   m_Layer: 0
-  m_Name: Ring1 (1)
+  m_Name: Ring2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,7 +831,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: f92b533f5d59bd448bfa052bdd80a79a, type: 3}
   m_Color: {r: 0.98039216, g: 0.85490197, b: 0, a: 0.49803922}
   m_FlipX: 0
@@ -7795,7 +7769,7 @@ GameObject:
   - component: {fileID: 347629502}
   - component: {fileID: 347629503}
   m_Layer: 0
-  m_Name: Ring1 (2)
+  m_Name: Ring3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7848,7 +7822,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: f92b533f5d59bd448bfa052bdd80a79a, type: 3}
   m_Color: {r: 0.98039216, g: 0.85490197, b: 0, a: 0.2509804}
   m_FlipX: 0
@@ -15491,7 +15465,7 @@ MonoBehaviour:
   - {r: 0, g: 0.79607844, b: 0.02745098, a: 1}
   - {r: 0, g: 0.38431373, b: 0.99607843, a: 1}
   - {r: 1, g: 0, b: 0.29803923, a: 1}
-  - {r: 1, g: 0.98039216, b: 1, a: 1}
+  - {r: 0.3019608, g: 0.43137255, b: 0.79607844, a: 1}
   m_LayerOffsets: 0a0000000f0000001e000000
   m_StarsPerLayer: 96000000fa000000c8000000
   m_StarSize: 0.2
@@ -20965,7 +20939,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: f92b533f5d59bd448bfa052bdd80a79a, type: 3}
   m_Color: {r: 0.98039216, g: 0.85490197, b: 0, a: 1}
   m_FlipX: 0
@@ -26836,37 +26810,6 @@ Prefab:
       propertyPath: center
       value: 
       objectReference: {fileID: 415698439}
-    - target: {fileID: 114297542140111958, guid: 6c8c1e4e0ad69304483388dc720b5d03,
-        type: 2}
-      propertyPath: radius
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 58684565285358122, guid: 6c8c1e4e0ad69304483388dc720b5d03,
-        type: 2}
-      propertyPath: m_Radius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 212021227053349118, guid: 6c8c1e4e0ad69304483388dc720b5d03,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 944c2220300574f488e187ced2802e44,
-        type: 3}
-    - target: {fileID: 212021227053349118, guid: 6c8c1e4e0ad69304483388dc720b5d03,
-        type: 2}
-      propertyPath: m_Size.x
-      value: 4.38
-      objectReference: {fileID: 0}
-    - target: {fileID: 212021227053349118, guid: 6c8c1e4e0ad69304483388dc720b5d03,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 4.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 212021227053349118, guid: 6c8c1e4e0ad69304483388dc720b5d03,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c8c1e4e0ad69304483388dc720b5d03, type: 2}
   m_IsPrefabAsset: 0
@@ -29427,7 +29370,7 @@ GameObject:
   - component: {fileID: 1473063927}
   - component: {fileID: 1473063928}
   m_Layer: 0
-  m_Name: Ring1 (3)
+  m_Name: Ring4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29480,7 +29423,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f92b533f5d59bd448bfa052bdd80a79a, type: 3}
   m_Color: {r: 0.98039216, g: 0.85490197, b: 0, a: 0.1254902}
   m_FlipX: 0
@@ -34001,6 +33944,11 @@ Prefab:
         type: 2}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212021227053349118, guid: 3df64112f5e900546a79b3ed1a9ea90c,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3df64112f5e900546a79b3ed1a9ea90c, type: 2}
