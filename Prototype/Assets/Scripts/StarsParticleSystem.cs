@@ -5,13 +5,20 @@ using UnityEngine;
 public class StarsParticleSystem : MonoBehaviour
 {
     [SerializeField]
+    private List<Color> m_Colors;
+
+    [SerializeField]
     private List<int> m_LayerOffsets;
+
     [SerializeField]
     private List<int> m_StarsPerLayer;
+
     [SerializeField]
     private float m_StarSize = 1f;
+
     [SerializeField]
     private float m_StarDistance = 10f;
+
     private float m_StarDistanceSqr;
     private int m_MaxStarCount;
 
@@ -45,7 +52,7 @@ public class StarsParticleSystem : MonoBehaviour
             {
                 Vector2 randomPosition = Random.insideUnitCircle * m_StarDistance + new Vector2(m_ParticleTransform.position.x, m_ParticleTransform.position.y);
                 m_Points[accumulatedLayerStarCount + j].position = new Vector3(randomPosition.x, randomPosition.y, m_LayerOffsets[i]);
-                m_Points[accumulatedLayerStarCount + j].startColor = Color.white;
+                m_Points[accumulatedLayerStarCount + j].startColor = m_Colors[Random.Range(0, m_Colors.Count)];
                 m_Points[accumulatedLayerStarCount + j].startSize = m_StarSize;
             }
         }
