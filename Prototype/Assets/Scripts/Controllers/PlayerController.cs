@@ -13,9 +13,15 @@ public class PlayerController : MonoBehaviour
     private GameObject planet;
     private bool isBoosting = false;
     private int fuelLevel = 1;
+    private float m_Thrust = 0;
+    private float m_LeftThrust = 0;
+    private float m_RightThrust = 0;
+    private bool m_Thrusting = false;
+    private bool m_LeftThrusting = false;
+    private bool m_RightThrusting = false;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
         if (PlayerPrefs.GetInt("FuelLevel") > 0)
@@ -56,12 +62,49 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
+        //if (rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
+        //{
+        //    rigidBody2D.AddForce(transform.up * CrossPlatformInputManager.GetAxis("Vertical") * movementSpeedScale * Time.fixedDeltaTime);
+        //}
+
+        //transform.Rotate(transform.forward, -CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeedScale * Time.fixedDeltaTime);
+
+        // Horizontal movement based on accelerometer for rotation
+        transform.Rotate(transform.forward, -Input.acceleration.x * rotationSpeedScale * Time.fixedDeltaTime);
+
+        if(m_Thrusting)
         {
-            rigidBody2D.AddForce(transform.up * CrossPlatformInputManager.GetAxis("Vertical") * movementSpeedScale * Time.fixedDeltaTime);
+            m_Thrust += Time.deltaTime;
+        }
+        else if (m_Thrust > Time.deltaTime)
+        {
+            m_Thrust -= Time.deltaTime;
         }
 
-        transform.Rotate(transform.forward, -CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeedScale * Time.fixedDeltaTime);
+        if(m_LeftThrusting)
+        {
+            m_LeftThrust += Time.deltaTime;
+        }
+        else if(m_LeftThrust > Time.deltaTime)
+        {
+            m_LeftThrust -= Time.deltaTime;
+        }
+
+        if(m_RightThrusting)
+        {
+            m_RightThrust += Time.deltaTime;
+        }
+        else if(m_RightThrust > Time.deltaTime)
+        {
+            m_RightThrust -= Time.deltaTime;
+        }
+
+        if(rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
+        {
+            rigidBody2D.AddForce(transform.up * m_Thrust * movementSpeedScale * Time.fixedDeltaTime);
+            rigidBody2D.AddForce(-transform.right * m_LeftThrust * movementSpeedScale * Time.fixedDeltaTime);
+            rigidBody2D.AddForce(transform.right * m_RightThrust * movementSpeedScale * Time.fixedDeltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -86,5 +129,20 @@ public class PlayerController : MonoBehaviour
         {
             planet = null;
         }
+    }
+    
+    public void SetThrusting(bool a_Thrusting)
+    {
+        m_Thrusting = a_Thrusting;
+    }
+
+    public void SetLeftThrusting(bool a_Thrusting)
+    {
+        m_LeftThrusting = a_Thrusting;
+    }
+
+    public void SetRightThrusting(bool a_Thrusting)
+    {
+        m_RightThrusting = a_Thrusting;
     }
 }
