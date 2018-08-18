@@ -22,6 +22,8 @@ public class MenuManager : MonoBehaviour
     public float elapsedtime = 0f;
     public float timeInScene = 0;
 
+    private string m_NextScene;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -68,14 +70,26 @@ public class MenuManager : MonoBehaviour
         }
     }
 
-    public void SwitchScene(string name)
+    public void SwitchScene(string a_name)
     {
-        timeInScene = 0;
-        SceneManager.LoadScene(name);
+        m_NextScene = a_name;
+
+        MenuTransition menuTransition = GetComponent<MenuTransition>();
+
+        if(menuTransition.GetIsTransitioning() == false)
+        {
+            menuTransition.StartTransition();
+        }
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void NextScene()
+    {
+        timeInScene = 0;
+        SceneManager.LoadScene(m_NextScene);
     }
 }
