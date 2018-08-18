@@ -31383,6 +31383,46 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114607753183552284, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1722288240}
+    - target: {fileID: 114607753183552284, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TogglePause
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536806982034344, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1722288240}
+    - target: {fileID: 114536806982034344, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 114598131852585630, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1722288240}
+    - target: {fileID: 114598131852585630, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleOptions
+      objectReference: {fileID: 0}
+    - target: {fileID: 114465765778009834, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1722288240}
+    - target: {fileID: 114465765778009834, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3fff86eab6bfbf4081ba1713cd96f8d, type: 2}
   m_IsPrefabAsset: 0
