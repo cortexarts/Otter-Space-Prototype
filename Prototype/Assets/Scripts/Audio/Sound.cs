@@ -28,9 +28,6 @@ public class Sound
     private float m_PitchVariance = 0.1f;
 
     [SerializeField]
-    private bool m_Loop = false;
-
-    [SerializeField]
     private List<string> m_Scenes;
 
     private AudioMixerGroup m_Mixer;
@@ -41,12 +38,11 @@ public class Sound
 
     }
 
-    public Sound(string a_Name, float a_Volume, float a_Pitch, bool a_Loop, string a_Scene, AudioMixerGroup a_Mixer, AudioSource a_Source)
+    public Sound(string a_Name, float a_Volume, float a_Pitch, string a_Scene, AudioMixerGroup a_Mixer, AudioSource a_Source)
     {
         m_Name = a_Name;
         m_Volume = a_Volume;
         m_Pitch = a_Pitch;
-        m_Loop = a_Loop;
         m_Scenes.Add(a_Scene);
         m_Mixer = a_Mixer;
         m_Source = a_Source;
@@ -75,11 +71,6 @@ public class Sound
     public void SetPitchVariance(float a_Variance)
     {
         m_PitchVariance = a_Variance;
-    }
-
-    public void SetLoop(bool a_Loop)
-    {
-        m_Loop = a_Loop;
     }
 
     public void SetMixer(AudioMixerGroup a_Mixer)
@@ -115,11 +106,6 @@ public class Sound
     public float GetPitchVariance()
     {
         return m_PitchVariance;
-    }
-
-    public bool GetLoop()
-    {
-        return m_Loop;
     }
 
     public List<string> GetScenes()

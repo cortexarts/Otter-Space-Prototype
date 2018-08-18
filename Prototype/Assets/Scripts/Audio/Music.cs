@@ -5,9 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class Music : Sound
 {
+    [SerializeField]
+    private bool m_Loop = false;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
 		
 	}
@@ -17,4 +19,14 @@ public class Music : Sound
     {
 		
 	}
+
+    public void SetLoop(bool a_Loop)
+    {
+        m_Loop = a_Loop;
+    }
+
+    public bool GetLoop()
+    {
+        return m_Loop;
+    }
 }

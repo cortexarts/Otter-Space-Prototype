@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Volume")]
     [SerializeField]
-    private float m_MainVolume = 1.0f;
+    private float m_MasterVolume = 1.0f;
 
     [SerializeField]
     private float m_MusicVolume = 1.0f;
@@ -52,7 +52,6 @@ public class AudioManager : MonoBehaviour
         {
             sound.SetSource(gameObject.AddComponent<AudioSource>());
             sound.GetSource().clip = sound.GetClip();
-            sound.GetSource().loop = sound.GetLoop();
             sound.GetSource().outputAudioMixerGroup = m_Mixer;
         }
 
@@ -87,7 +86,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        sound.GetSource().volume = sound.GetVolume() * m_MainVolume * m_SoundVolume * (1.0f + UnityEngine.Random.Range(-sound.GetVolumeVariance() / 2.0f, sound.GetVolumeVariance() / 2.0f));
+        sound.GetSource().volume = sound.GetVolume() * m_MasterVolume * m_SoundVolume * (1.0f + UnityEngine.Random.Range(-sound.GetVolumeVariance() / 2.0f, sound.GetVolumeVariance() / 2.0f));
         sound.GetSource().pitch = sound.GetVolume() * (1.0f + UnityEngine.Random.Range(-sound.GetPitchVariance() / 2.0f, sound.GetPitchVariance() / 2.0f));
         sound.GetSource().Play();
 
@@ -117,7 +116,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        music.GetSource().volume = music.GetVolume() * m_MainVolume * m_MusicVolume * (1.0f + UnityEngine.Random.Range(-music.GetVolumeVariance() / 2.0f, music.GetVolumeVariance() / 2.0f));
+        music.GetSource().volume = music.GetVolume() * m_MasterVolume * m_MusicVolume * (1.0f + UnityEngine.Random.Range(-music.GetVolumeVariance() / 2.0f, music.GetVolumeVariance() / 2.0f));
         music.GetSource().pitch = music.GetVolume() * (1.0f + UnityEngine.Random.Range(-music.GetPitchVariance() / 2.0f, music.GetPitchVariance() / 2.0f));
         music.GetSource().Play();
 
@@ -128,7 +127,7 @@ public class AudioManager : MonoBehaviour
     {
         foreach(Sound item in m_Sounds)
         {
-            item.GetSource().volume = item.GetVolume() * m_MainVolume * m_SoundVolume * (1.0f + UnityEngine.Random.Range(-item.GetVolumeVariance() / 2.0f, item.GetVolumeVariance() / 2.0f));
+            item.GetSource().volume = item.GetVolume() * m_MasterVolume * m_SoundVolume * (1.0f + UnityEngine.Random.Range(-item.GetVolumeVariance() / 2.0f, item.GetVolumeVariance() / 2.0f));
         }
     }
 
@@ -136,13 +135,13 @@ public class AudioManager : MonoBehaviour
     {
         foreach(Music item in m_Music)
         {
-            item.GetSource().volume = item.GetVolume() * m_MainVolume * m_MusicVolume * (1.0f + UnityEngine.Random.Range(-item.GetVolumeVariance() / 2.0f, item.GetVolumeVariance() / 2.0f));
+            item.GetSource().volume = item.GetVolume() * m_MasterVolume * m_MusicVolume * (1.0f + UnityEngine.Random.Range(-item.GetVolumeVariance() / 2.0f, item.GetVolumeVariance() / 2.0f));
         }
     }
 
-    public void SetMainVolume(float a_Volume)
+    public void SetMasterVolume(float a_Volume)
     {
-        m_MainVolume = a_Volume;
+        m_MasterVolume = a_Volume;
         UpdateSoundVolume();
         UpdateMusicVolume();
     }
@@ -159,9 +158,9 @@ public class AudioManager : MonoBehaviour
         UpdateMusicVolume();
     }
 
-    public void SetMainVolume(Slider a_Slider)
+    public void SetMasterVolume(Slider a_Slider)
     {
-        m_MainVolume = a_Slider.value;
+        m_MasterVolume = a_Slider.value;
         UpdateSoundVolume();
         UpdateMusicVolume();
     }
