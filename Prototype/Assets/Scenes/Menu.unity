@@ -1558,8 +1558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TransitionSprite: {fileID: 21300000, guid: f79b6b3ed52e40d42851ff95f0dcd73a, type: 3}
   m_Parent: {fileID: 1504570927}
-  m_TransitionSpeed: 20
-  m_TargetScale: 20
+  m_TransitionSpeed: 22
+  m_TargetScale: 22
 --- !u!1 &1101794619
 GameObject:
   m_ObjectHideFlags: 0
