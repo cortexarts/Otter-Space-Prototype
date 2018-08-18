@@ -5,16 +5,12 @@ using UnityEngine.UI;
 
 public class MainMenuChange : MonoBehaviour
 {
-
     [Header("Desired aesthetic")]
     [SerializeField]
     private Color m_Color;
 
     [SerializeField]
     private Color m_RingColor;
-
-    [SerializeField]
-    private Sprite m_EarthSprite;
 
     [SerializeField]
     private float m_Duration = 0.0f;
@@ -34,6 +30,7 @@ public class MainMenuChange : MonoBehaviour
 
     private Color m_DefaultColor;
     private Color m_DefaultRingColor;
+    private Color m_EarthColor;
     private float m_time = 0.0f;
 
 	// Use this for initialization
@@ -41,6 +38,7 @@ public class MainMenuChange : MonoBehaviour
     {
         m_DefaultColor = m_TargetText[0].color;
         m_DefaultRingColor = m_TargetRings[0].color;
+        m_EarthColor = m_EarthTarget.color;
     }
 	
 	// Update is called once per frame
@@ -63,14 +61,14 @@ public class MainMenuChange : MonoBehaviour
             m_TargetRings[i].color = new Color(ringColor.r, ringColor.g, ringColor.b, 1.0f / (1.0f * i + 1));
         }
 
-        if(m_time >= m_Duration)
+        if(m_time > m_Duration)
         {
-            m_EarthTarget.sprite = m_EarthSprite;
-
             m_time = m_Duration;
         }
         else
         {
+            m_EarthColor.a -= Time.deltaTime / m_Duration;
+            m_EarthTarget.color = m_EarthColor;
             m_time += Time.deltaTime / m_Duration;
         }
     }
