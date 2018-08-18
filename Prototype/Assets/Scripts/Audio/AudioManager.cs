@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour
 
         if(sound == null)
         {
-            Debug.LogWarning("Sound: " + name + " was not found!");
+            Debug.LogWarning("Sound: " + a_Name + " was not found!");
             return;
         }
 
@@ -79,7 +79,7 @@ public class AudioManager : MonoBehaviour
         {
             if(sound.GetScenes().Contains("") == false && sound.GetScenes().Contains(SceneManager.GetActiveScene().name) == false)
             {
-                Debug.LogWarning("Music: " + name + " was not set for this scene!");
+                Debug.LogWarning("Music: " + a_Name + " was not set for this scene!");
 
                 return;
             }
@@ -100,7 +100,7 @@ public class AudioManager : MonoBehaviour
 
         if(music == null)
         {
-            Debug.LogWarning("Music: " + name + " was not found!");
+            Debug.LogWarning("Music: " + a_Name + " was not found!");
 
             return;
         }
@@ -109,7 +109,7 @@ public class AudioManager : MonoBehaviour
         {
             if(music.GetScenes().Contains("") == false && music.GetScenes().Contains(SceneManager.GetActiveScene().name) == false)
             {
-                Debug.LogWarning("Music: " + name + " was not set for this scene!");
+                Debug.LogWarning("Music: " + a_Name + " was not set for this scene!");
 
                 return;
             }
@@ -200,5 +200,20 @@ public class AudioManager : MonoBehaviour
         int id = UnityEngine.Random.Range(0, m_Music.Length);
 
         return m_Music[id];
+    }
+
+    public Music GetMusicInScene(string a_Scene)
+    {
+        Music music = m_Music[0];
+
+        foreach(Music item in m_Music)
+        {
+            if(item.GetScenes().Contains(a_Scene))
+            {
+                music = item;
+            }
+        }
+
+        return music;
     }
 }

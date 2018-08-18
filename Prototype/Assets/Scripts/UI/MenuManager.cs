@@ -25,7 +25,7 @@ public class MenuManager : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        AudioManager.m_Instance.PlayMusic(AudioManager.m_Instance.GetRandomMusic().GetName());
+        AudioManager.m_Instance.PlayMusic(AudioManager.m_Instance.GetMusicInScene(SceneManager.GetActiveScene().name).GetName());
 	}
 	
 	// Update is called once per frame
