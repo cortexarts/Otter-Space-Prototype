@@ -112,8 +112,6 @@ public class AudioManager : MonoBehaviour
 
                 return;
             }
-
-            return;
         }
 
         music.GetSource().volume = music.GetVolume() * m_MasterVolume * m_MusicVolume * (1.0f + UnityEngine.Random.Range(-music.GetVolumeVariance() / 2.0f, music.GetVolumeVariance() / 2.0f));
@@ -201,7 +199,7 @@ public class AudioManager : MonoBehaviour
         return m_Music[id];
     }
 
-    public Music GetMusicInScene(string a_Scene)
+    public string GetMusicInScene(string a_Scene)
     {
         Music music = m_Music[0];
 
@@ -213,6 +211,6 @@ public class AudioManager : MonoBehaviour
             }
         }
 
-        return music;
+        return music.GetName();
     }
 }
