@@ -9,12 +9,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e042b4c80c76724aabd39a6d5dacf25, type: 3}
-  m_Name: Aerozine
+  m_Name: LiquidHydrogen
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 5e27035e1c65b8a4f81a29c7fcacddca, type: 3}
-  m_Symbol: 50/50
-  discoveryText: Great job! You've discovered Aerozine!
-  discoveryTitle: 50/50
+  icon: {fileID: 21300000, guid: 6191dcb8362b6b24b95c861408da27c5, type: 3}
+  m_Symbol: LH2
+  discoveryText: Great job! You've discovered Liquid Hydrogen!
+  discoveryTitle: Cool!
   customColor: {r: 0, g: 0, b: 0, a: 1}
   customSound: 
   itemObject: {fileID: 0}

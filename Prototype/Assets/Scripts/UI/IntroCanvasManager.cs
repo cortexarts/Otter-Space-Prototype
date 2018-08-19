@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class IntroCanvasManager : MonoBehaviour
 {
+    #region Singleton
+
+    public static IntroCanvasManager m_Instance;
+
+    private void Awake()
+    {
+        m_Instance = this;
+    }
+
+    #endregion
+
     public enum State { Default, Controls, Animation, Crafting, Notebook, Dialogue, Help, Fuel, Playing };
     public State currentState;
     public GameObject panelControls;

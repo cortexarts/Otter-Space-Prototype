@@ -11,7 +11,7 @@ public class Item : ScriptableObject {
 	public string discoveryText;
 	public string discoveryTitle;
 
-	public Color customColor = Color.black;
+	public Color customColor;
 
 	public string customSound;
 

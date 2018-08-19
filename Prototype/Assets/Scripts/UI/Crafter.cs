@@ -157,6 +157,11 @@ public class Crafter : MonoBehaviour
                     if(!Inventory.instance.HasItem(recipe.result))
                     {
                         items.Add(recipe.result);
+
+                        if(recipe.result.name == "Aerozine")
+                        {
+                            IntroCanvasManager.m_Instance.ToNextState();
+                        }
                     }
                 }
             }
@@ -167,6 +172,11 @@ public class Crafter : MonoBehaviour
                     if(!Inventory.instance.HasItem(recipe.result))
                     {
                         items.Add(recipe.result);
+
+                        if(recipe.result.name == "Aerozine")
+                        {
+                            IntroCanvasManager.m_Instance.ToNextState();
+                        }
                     }
                 }
             }
@@ -196,6 +206,11 @@ public class Crafter : MonoBehaviour
                     if(Inventory.instance.HasItem(recipe.result))
                     {
                         items.Add(recipe.result);
+
+                        if(recipe.result.name == "Aerozine")
+                        {
+                            IntroCanvasManager.m_Instance.ToNextState();
+                        }
                     }
                 }
             }
@@ -206,6 +221,11 @@ public class Crafter : MonoBehaviour
                     if(!Inventory.instance.HasItem(recipe.result))
                     {
                         items.Add(recipe.result);
+
+                        if(recipe.result.name == "Aerozine")
+                        {
+                            IntroCanvasManager.m_Instance.ToNextState();
+                        }
                     }
                 }
             }
