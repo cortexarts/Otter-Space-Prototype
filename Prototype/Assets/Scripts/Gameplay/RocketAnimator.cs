@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketAnimator : MonoBehaviour {
-
+public class RocketAnimator : MonoBehaviour
+{
     [SerializeField]
     private GameObject m_ForwardThrusters;
     [SerializeField]
@@ -12,14 +12,19 @@ public class RocketAnimator : MonoBehaviour {
     private GameObject m_TurnLeftThrusters;
     [SerializeField]
     private GameObject m_TurnRightThrusters;
-    
-	// Update is called once per frame
-	void Update () {
-        float inputHorizontal = Input.GetAxis("Horizontal");
-        float inputVertical = Input.GetAxis("Vertical");
 
-        ValueDependendAnimation(inputVertical, m_BackwardsThrusters, m_ForwardThrusters);
-        ValueDependendAnimation(-inputHorizontal, m_TurnLeftThrusters, m_TurnRightThrusters);
+    private PlayerController m_PlayerController;
+
+    private void Start()
+    {
+        m_PlayerController = GetComponent<PlayerController>();
+    }
+
+    // Update is called once per frame
+    void Update ()
+    {
+        ValueDependendAnimation(m_PlayerController.GetForwardThrust(), m_BackwardsThrusters, m_ForwardThrusters);
+        ValueDependendAnimation(-m_PlayerController.GetSideThrust(), m_TurnLeftThrusters, m_TurnRightThrusters);
     }
 
     //Using a value which is between 1 and -1 it is decided which gameobject to turn on
@@ -34,17 +39,24 @@ public class RocketAnimator : MonoBehaviour {
                 max.SetActive(true);
                 min.SetActive(false);
             }
-            foreach (Transform t in max.GetComponentInChildren<Transform>())
+
+            foreach(Transform t in max.GetComponentInChildren<Transform>())
+            {
                 t.localScale = new Vector3(value, value, 1);
+            }
         }
-        else if (value < 0) {
+        else if (value < 0)
+        {
             if (!min.activeInHierarchy)
             {
                 max.SetActive(false);
                 min.SetActive(true);
             }
-            foreach (Transform t in min.GetComponentInChildren<Transform>())
+
+            foreach(Transform t in min.GetComponentInChildren<Transform>())
+            {
                 t.localScale = new Vector3(-value, -value, 1);
+            }
         }
         else if (value == 0)
         {

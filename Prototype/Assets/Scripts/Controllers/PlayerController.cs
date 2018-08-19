@@ -8,12 +8,6 @@ public class PlayerController : MonoBehaviour
     private float m_MaxVelocity = 10.0f;
 
     [SerializeField]
-    private float m_MaxThrust = 10.0f;
-
-    [SerializeField]
-    private float m_MaxSideThrust = 5.0f;
-
-    [SerializeField]
     private float m_RotationSpeedScale = 20.0f;
 
     [SerializeField]
@@ -23,13 +17,10 @@ public class PlayerController : MonoBehaviour
     private float m_FuelAmount = 100.0f;
 
     [SerializeField]
-    private float m_Thrust = 0;
+    private float m_ForwardThrust = 0;
 
     [SerializeField]
-    private float m_LeftThrust = 0;
-
-    [SerializeField]
-    private float m_RightThrust = 0;
+    private float m_SideThrust = 0;
 
     [SerializeField]
     private bool m_Thrusting = false;
@@ -76,42 +67,36 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // Rotation based on accelerometer
-        transform.Rotate(transform.forward, (-Input.acceleration.x + m_LeftThrust - m_RightThrust) * m_RotationSpeedScale * Time.fixedDeltaTime);
+        transform.Rotate(transform.forward, (-Input.acceleration.x + m_SideThrust) * m_RotationSpeedScale * Time.fixedDeltaTime);
 
         if(m_Thrusting)
         {
-            m_Thrust += Time.fixedDeltaTime;
+            m_ForwardThrust += Time.fixedDeltaTime;
         }
-        else if (m_Thrust > 0)
+        else
         {
-            m_Thrust = 0;
+            m_ForwardThrust = 0;
         }
 
         if(m_LeftThrusting)
         {
-            m_LeftThrust += Time.deltaTime;
+            m_SideThrust += Time.deltaTime;
         }
-        else if(m_LeftThrust > 0)
+        else if(m_RightThrusting)
         {
-            m_LeftThrust = 0;
+            m_SideThrust -= Time.deltaTime;
+        }
+        else
+        {
+            m_SideThrust = 0;
         }
 
-        if(m_RightThrusting)
-        {
-            m_RightThrust += Time.deltaTime;
-        }
-        else if(m_RightThrust > 0)
-        {
-            m_RightThrust = 0;
-        }
+        m_ForwardThrust = Mathf.Clamp(m_ForwardThrust, -1.0f, 1.0f);
+        m_SideThrust = Mathf.Clamp(m_SideThrust, -1.0f, 1.0f);
 
-        m_Thrust = Mathf.Clamp(m_Thrust, 0.0f, m_MaxThrust);
-        m_LeftThrust = Mathf.Clamp(m_LeftThrust, 0.0f, m_MaxSideThrust);
-        m_RightThrust = Mathf.Clamp(m_RightThrust, 0.0f, m_MaxSideThrust);
-
-        rigidBody2D.AddForce(transform.up * m_Thrust * m_MovementSpeedScale * Time.fixedDeltaTime);
-        rigidBody2D.AddForce(transform.right * m_LeftThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
-        rigidBody2D.AddForce(-transform.right * m_RightThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(transform.up * m_ForwardThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(transform.right * m_SideThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(-transform.right * m_SideThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
 
         // Clamp velocity as thrust only adds more force
         Vector2 velocity = Vector2.zero;
@@ -156,6 +141,31 @@ public class PlayerController : MonoBehaviour
     public float GetFuelAmount()
     {
         return m_FuelAmount;
+    }
+
+    public bool GetIsThrusting()
+    {
+        return m_Thrusting;
+    }
+
+    public bool GetIsLeftthrusting()
+    {
+        return m_LeftThrusting;
+    }
+
+    public bool GetIsRightThrusting()
+    {
+        return m_RightThrusting;
+    }
+
+    public float GetForwardThrust()
+    {
+        return m_ForwardThrust;
+    }
+
+    public float GetSideThrust()
+    {
+        return m_SideThrust;
     }
 
     public void SetThrusting(bool a_Thrusting)
