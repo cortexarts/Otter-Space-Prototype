@@ -4,21 +4,46 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float maxMovementSpeed = 10.0f;
-    public float rotationSpeedScale = 20.0f;
-    public float movementSpeedScale = 50.0f;
-    public float fuelAmount = 100.0f;
+    [SerializeField]
+    private float m_MaxVelocity = 10.0f;
+
+    [SerializeField]
+    private float m_MaxThrust = 10.0f;
+
+    [SerializeField]
+    private float m_MaxSideThrust = 5.0f;
+
+    [SerializeField]
+    private float m_RotationSpeedScale = 20.0f;
+
+    [SerializeField]
+    private float m_MovementSpeedScale = 50.0f;
+
+    [SerializeField]
+    private float m_FuelAmount = 100.0f;
+
+    [SerializeField]
+    private float m_Thrust = 0;
+
+    [SerializeField]
+    private float m_LeftThrust = 0;
+
+    [SerializeField]
+    private float m_RightThrust = 0;
+
+    [SerializeField]
+    private bool m_Thrusting = false;
+
+    [SerializeField]
+    private bool m_LeftThrusting = false;
+
+    [SerializeField]
+    private bool m_RightThrusting = false;
 
     private Rigidbody2D rigidBody2D;
     private GameObject planet;
     private bool isBoosting = false;
     private int fuelLevel = 1;
-    private float m_Thrust = 0;
-    private float m_LeftThrust = 0;
-    private float m_RightThrust = 0;
-    private bool m_Thrusting = false;
-    private bool m_LeftThrusting = false;
-    private bool m_RightThrusting = false;
 
     // Use this for initialization
     void Start ()
@@ -35,7 +60,7 @@ public class PlayerController : MonoBehaviour
     {
         if (rigidBody2D.velocity.x > 0.0f || rigidBody2D.velocity.y > 0.0f)
         {
-            fuelAmount -= Time.deltaTime / fuelLevel;
+            m_FuelAmount -= Time.deltaTime / fuelLevel;
         }
 
         if (CrossPlatformInputManager.GetButtonDown("Boost"))
@@ -48,29 +73,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public float GetVelocity()
-    {
-        float velocity = rigidBody2D.velocity.magnitude;
-
-        return velocity;
-    }
-
-    public float GetFuelAmount()
-    {
-        return fuelAmount;
-    }
-
     private void FixedUpdate()
     {
-        //if (rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
-        //{
-        //    rigidBody2D.AddForce(transform.up * CrossPlatformInputManager.GetAxis("Vertical") * movementSpeedScale * Time.fixedDeltaTime);
-        //}
-
-        //transform.Rotate(transform.forward, -CrossPlatformInputManager.GetAxis("Horizontal") * rotationSpeedScale * Time.fixedDeltaTime);
-
-        // Horizontal movement based on accelerometer for rotation
-        transform.Rotate(transform.forward, -Input.acceleration.x * rotationSpeedScale * Time.fixedDeltaTime);
+        // Rotation based on accelerometer
+        transform.Rotate(transform.forward, (-Input.acceleration.x + m_LeftThrust - m_RightThrust) * m_RotationSpeedScale * Time.fixedDeltaTime);
 
         if(m_Thrusting)
         {
@@ -99,16 +105,21 @@ public class PlayerController : MonoBehaviour
             m_RightThrust = 0;
         }
 
-        //if(rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
-        //{
-        //    rigidBody2D.AddForce(transform.up * m_Thrust * movementSpeedScale * Time.fixedDeltaTime);
-        //    rigidBody2D.AddForce(-transform.right * m_LeftThrust * movementSpeedScale * Time.fixedDeltaTime);
-        //    rigidBody2D.AddForce(transform.right * m_RightThrust * movementSpeedScale * Time.fixedDeltaTime);
-        //}
+        m_Thrust = Mathf.Clamp(m_Thrust, 0.0f, m_MaxThrust);
+        m_LeftThrust = Mathf.Clamp(m_LeftThrust, 0.0f, m_MaxSideThrust);
+        m_RightThrust = Mathf.Clamp(m_RightThrust, 0.0f, m_MaxSideThrust);
 
-        rigidBody2D.AddForce(transform.up * m_Thrust * movementSpeedScale * Time.fixedDeltaTime);
-        rigidBody2D.AddForce(-transform.right * m_LeftThrust * movementSpeedScale * Time.fixedDeltaTime);
-        rigidBody2D.AddForce(transform.right * m_RightThrust * movementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(transform.up * m_Thrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(transform.right * m_LeftThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(-transform.right * m_RightThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+
+        // Clamp velocity as thrust only adds more force
+        Vector2 velocity = Vector2.zero;
+
+        velocity.x = Mathf.Clamp(rigidBody2D.velocity.x, -m_MaxVelocity, m_MaxVelocity);
+        velocity.y = Mathf.Clamp(rigidBody2D.velocity.y, -m_MaxVelocity, m_MaxVelocity);
+
+        rigidBody2D.velocity = velocity;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -134,7 +145,19 @@ public class PlayerController : MonoBehaviour
             planet = null;
         }
     }
-    
+
+    public float GetVelocity()
+    {
+        float velocity = rigidBody2D.velocity.magnitude;
+
+        return velocity;
+    }
+
+    public float GetFuelAmount()
+    {
+        return m_FuelAmount;
+    }
+
     public void SetThrusting(bool a_Thrusting)
     {
         m_Thrusting = a_Thrusting;

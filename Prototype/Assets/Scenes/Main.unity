@@ -21988,10 +21988,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3ff45109014fa74bac4a929152375bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMovementSpeed: 100
-  rotationSpeedScale: 100
-  movementSpeedScale: 50
-  fuelAmount: 100
+  m_MaxThrust: 10
+  m_MaxSideThrust: 5
+  m_RotationSpeedScale: 20
+  m_MovementSpeedScale: 50
+  m_FuelAmount: 100
+  m_Thrust: 0
+  m_LeftThrust: 0
+  m_RightThrust: 0
+  m_Thrusting: 0
+  m_LeftThrusting: 0
+  m_RightThrusting: 0
 --- !u!61 &855464898
 BoxCollider2D:
   m_ObjectHideFlags: 0
