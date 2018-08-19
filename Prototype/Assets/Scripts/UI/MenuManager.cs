@@ -82,6 +82,23 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void TogglePanel(GameObject a_Panel)
+    {
+        if(a_Panel.activeInHierarchy)
+        {
+            a_Panel.SetActive(false);
+        }
+        else
+        {
+            a_Panel.SetActive(true);
+        }
+    }
+
+    public void OpenURL(string a_URL)
+    {
+        Application.OpenURL(a_URL);
+    }
+
     public void Quit()
     {
         Application.Quit();
