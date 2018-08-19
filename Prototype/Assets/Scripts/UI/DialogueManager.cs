@@ -75,16 +75,16 @@ public class DialogueManager : MonoBehaviour
         m_Name.text = currentPhrase.character;
     }
 
-    public void PlayDialogue(int a_Index)
+    public void PlayDialogue(int a_Index, bool a_Stay)
     {
         dialogueIndex = a_Index;
         m_Name.text = "";
         m_Text.text = "";
         CreateDialogue();
-        StartCoroutine(TypeText());
+        StartCoroutine(TypeText(a_Stay));
     }
 
-    IEnumerator TypeText()
+    IEnumerator TypeText(bool a_Stay)
     {
         foreach(char letter in message.ToCharArray())
         {
@@ -96,13 +96,20 @@ public class DialogueManager : MonoBehaviour
         {
             yield return new WaitForSeconds(DialoguePause);
             phraseIndex++;
-            PlayDialogue(dialogueIndex);
+            PlayDialogue(dialogueIndex, a_Stay);
         }
         else
         {
             yield return new WaitForSeconds(DialoguePause);
             phraseIndex = 0;
-            m_IntroCanvasManager.ToNextState();
+            if(!a_Stay)
+            {
+                m_IntroCanvasManager.ToNextState();
+            }
+            else
+            {
+                m_Name.gameObject.transform.parent.gameObject.SetActive(false);
+            }
         }
     }
 }

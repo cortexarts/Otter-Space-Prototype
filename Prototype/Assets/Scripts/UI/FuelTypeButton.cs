@@ -24,11 +24,13 @@ public class FuelTypeButton : MonoBehaviour
     public GameObject fuelTypeContainer;
 
     private ProgressManager progressManager;
+    private IntroCanvasManager m_IntroCanvasManager;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         progressManager = FindObjectOfType<ProgressManager>();
+        m_IntroCanvasManager = FindObjectOfType<IntroCanvasManager>();
 
         UpdateImage();
         UpdateFuelButtons();
@@ -133,6 +135,11 @@ public class FuelTypeButton : MonoBehaviour
             progressManager.SetCurrentFuel(fuel);
             ToggleFuelContainer();
             UpdateImage();
+
+            if(m_IntroCanvasManager.currentState != IntroCanvasManager.State.Playing)
+            {
+                m_IntroCanvasManager.ToNextState();
+            }
         }
         else
         {

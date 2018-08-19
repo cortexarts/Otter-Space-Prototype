@@ -60,6 +60,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelAnimation.SetActive(true);
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(false);
+                panelDialogue.SetActive(false);
                 cameraController.isZooming = false;
                 currentState = State.Animation;
                 break;
@@ -69,7 +70,9 @@ public class IntroCanvasManager : MonoBehaviour
                 panelHUD.SetActive(false);
                 panelLab.SetActive(true);
                 panelNotebook.SetActive(false);
+                panelDialogue.SetActive(true);
                 cameraController.isZooming = false;
+                m_DialogueManager.PlayDialogue(0, true);
                 currentState = State.Crafting;
                 break;
             case State.Crafting:
@@ -78,6 +81,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelHUD.SetActive(false);
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(true);
+                panelDialogue.SetActive(false);
                 cameraController.isZooming = false;
                 currentState = State.Notebook;
                 break;
@@ -89,7 +93,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(true);
                 cameraController.isZooming = false;
-                m_DialogueManager.PlayDialogue(1);
+                m_DialogueManager.PlayDialogue(1, false);
                 currentState = State.Dialogue;
                 break;
             case State.Dialogue:
@@ -101,7 +105,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelDialogue.SetActive(true);
                 panelControlsSide.SetActive(false);
                 panelcontrolsBottom.SetActive(false);
-                m_DialogueManager.PlayDialogue(2);
+                m_DialogueManager.PlayDialogue(2, false);
                 cameraController.isZooming = true;
                 currentState = State.Help;
                 break;

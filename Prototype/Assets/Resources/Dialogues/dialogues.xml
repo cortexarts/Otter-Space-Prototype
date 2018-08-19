@@ -1,9 +1,10 @@
 <dialogues>
   <dialogue index="1">
-    <phrase name="Olga">There is someone at the door for you, dear...</phrase>
-    <phrase name="Dimitri">Ugh, I don’t have time right now. Tell them I am not home.</phrase>
-	<phrase name="Olga">It’s one of the Onions, dear. I don’t think I can.</phrase>
-    <phrase name="Onion">Dimitri! We must speak with you. It’s very urgent!</phrase>
+    <phrase name="Professor Onion">Greetings Captain Dimitri! You seem ready to start your mission.</phrase>
+    <phrase name="Professor Onion">In order for the Ottership to take off you will have to create some fuel.</phrase>
+    <phrase name="Professor Onion">Try to create some chemical reactions using these very common elements, and see what you can come up with.</phrase>
+    <phrase name="Professor Onion">As you probably already know, Captain, Liquid Hydrogen is a very powerful fuel, which will help you to reach your first goal.</phrase>
+    <phrase name="Professor Onion">Don't use too much, as we only have so little left on Earth.</phrase>
   </dialogue>
   <dialogue index="2">
     <phrase name="Professor Onion">Dimitri, we have a problem.</phrase>
@@ -28,5 +29,11 @@
 	<phrase name="Dimitri">Aahw.</phrase>
 	<phrase name="Onion">Can we still collect the resources?</phrase>
 	<phrase name="Dimitri">Fine.</phrase>
+  </dialogue>
+  <dialogue index="5">
+    <phrase name="Olga">There is someone at the door for you, dear...</phrase>
+    <phrase name="Dimitri">Ugh, I don’t have time right now. Tell them I am not home.</phrase>
+    <phrase name="Olga">It’s one of the Onions, dear. I don’t think I can.</phrase>
+    <phrase name="Onion">Dimitri! We must speak with you. It’s very urgent!</phrase>
   </dialogue>
 </dialogues>
