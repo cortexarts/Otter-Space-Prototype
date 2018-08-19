@@ -1,0 +1,27 @@
+<dialogues>
+  <dialogue index="1">
+    <phrase name="Olga">There is someone at the door for you, dear...</phrase>
+    <phrase name="Dimitri">Ugh, I don’t have time right now. Tell them I am not home.</phrase>
+	<phrase name="Olga">It’s one of the Onions, dear. I don’t think I can.</phrase>
+    <phrase name="Onion">Dimitri! We must speak with you. It’s very urgent!</phrase>
+  </dialogue>
+  <dialogue index="2">
+    <phrase name="Professor Onion">Dimitri, we have a problem.</phrase>
+    <phrase name="Captain Dimitri">What is it?</phrase>
+	<phrase name="Professor Onion">We are running out of time!</phrase>
+    <phrase name="Professor Onion">We are almost out of resources and we need your help.</phrase>
+	<phrase name="Professor Onion">Only you know have the knowledge necessary for this journey. That’s why we need you to venture into otter space.</phrase>
+	<phrase name="Captain Dimitri">I can’t. I have a son, a daughter and a loving wife here on earth.</phrase>
+	<phrase name="Professor Onion">They will starve if no one brings them wood and water.</phrase>
+	<phrase name="Captain Dimitri">Fine! I’ll go, I guess I have no otter choice.</phrase>
+  </dialogue>
+  <dialogue index="3">
+    <phrase name="Dimitri">Wow, is that the moon?</phrase>
+    <phrase name="Onion">No, it’s a giant space ball.</phrase>
+	<phrase name="Dimitri">Really?</phrase>
+    <phrase name="Onion">No.</phrase>
+	<phrase name="Dimitri">Aahw.</phrase>
+	<phrase name="Onion">Can we still collect the resources?</phrase>
+	<phrase name="Dimitri">Fine.</phrase>
+  </dialogue>
+</dialogues>
