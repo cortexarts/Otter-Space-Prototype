@@ -101,6 +101,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(DialoguePause);
+            phraseIndex = 0;
             m_IntroCanvasManager.ToNextState();
         }
     }

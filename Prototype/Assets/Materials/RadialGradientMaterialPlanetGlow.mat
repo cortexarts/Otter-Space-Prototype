@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GradientMaterial
-  m_Shader: {fileID: 4800000, guid: 6b4ad69c47606644d9fdd0e5b8abcc89, type: 3}
-  m_ShaderKeywords: 
+  m_Name: RadialGradientMaterialPlanetGlow
+  m_Shader: {fileID: 4800000, guid: 60251fa5f1a87804c84201f259bae570, type: 3}
+  m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -66,12 +66,13 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Slide: 0.185
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.9647059, g: 0.9647059, b: 0.9647059, a: 1}
-    - _Color2: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Color2: {r: 1, g: 1, b: 1, a: 0.46666667}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

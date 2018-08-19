@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IntroCanvasManager : MonoBehaviour
 {
-    public enum State { Default, Controls, Animation, Crafting, Notebook, Dialogue, Playing };
+    public enum State { Default, Controls, Animation, Crafting, Notebook, Dialogue, Help, Fuel, Playing };
     public State currentState;
     public GameObject panelControls;
     public GameObject panelAnimation;
@@ -12,6 +12,8 @@ public class IntroCanvasManager : MonoBehaviour
     public GameObject panelLab;
     public GameObject panelNotebook;
     public GameObject panelDialogue;
+    public GameObject panelControlsSide;
+    public GameObject panelcontrolsBottom;
 
     private CameraController cameraController;
     private DialogueManager m_DialogueManager;
@@ -96,8 +98,33 @@ public class IntroCanvasManager : MonoBehaviour
                 panelHUD.SetActive(false);
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(false);
-                panelDialogue.SetActive(false);
+                panelDialogue.SetActive(true);
+                panelControlsSide.SetActive(false);
+                panelcontrolsBottom.SetActive(false);
+                m_DialogueManager.PlayDialogue(2);
                 cameraController.isZooming = true;
+                currentState = State.Help;
+                break;
+            case State.Help:
+                panelControls.SetActive(false);
+                panelAnimation.SetActive(false);
+                panelHUD.SetActive(true);
+                panelLab.SetActive(false);
+                panelNotebook.SetActive(false);
+                panelDialogue.SetActive(false);
+                panelControlsSide.SetActive(false);
+                panelcontrolsBottom.SetActive(false);
+                currentState = State.Fuel;
+                break;
+            case State.Fuel:
+                panelControls.SetActive(false);
+                panelAnimation.SetActive(false);
+                panelHUD.SetActive(true);
+                panelLab.SetActive(false);
+                panelNotebook.SetActive(false);
+                panelDialogue.SetActive(false);
+                panelControlsSide.SetActive(true);
+                panelcontrolsBottom.SetActive(true);
                 currentState = State.Playing;
                 break;
             default:
