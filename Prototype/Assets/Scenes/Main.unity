@@ -21591,6 +21591,8 @@ MonoBehaviour:
   m_FuelAmount: 100
   m_ForwardThrust: 0
   m_SideThrust: 0
+  m_ForwardThrustLimit: 1
+  m_SideThrustLimit: 0.5
   m_Thrusting: 0
   m_LeftThrusting: 0
   m_RightThrusting: 0

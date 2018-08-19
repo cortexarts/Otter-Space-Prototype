@@ -23,6 +23,14 @@ public class PlayerController : MonoBehaviour
     private float m_SideThrust = 0;
 
     [SerializeField]
+    [Range(0.0f, 1.0f)]
+    private float m_ForwardThrustLimit;
+
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    private float m_SideThrustLimit;
+
+    [SerializeField]
     private bool m_Thrusting = false;
 
     [SerializeField]
@@ -91,12 +99,19 @@ public class PlayerController : MonoBehaviour
             m_SideThrust = 0;
         }
 
-        m_ForwardThrust = Mathf.Clamp(m_ForwardThrust, -1.0f, 1.0f);
-        m_SideThrust = Mathf.Clamp(m_SideThrust, -1.0f, 1.0f);
+        m_ForwardThrust = Mathf.Clamp(m_ForwardThrust, 0.0f, m_ForwardThrustLimit);
+        m_SideThrust = Mathf.Clamp(m_SideThrust, -m_SideThrustLimit, m_SideThrustLimit);
 
         rigidBody2D.AddForce(transform.up * m_ForwardThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
-        rigidBody2D.AddForce(transform.right * m_SideThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
-        rigidBody2D.AddForce(-transform.right * m_SideThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+
+        if(m_SideThrust > 0.0f)
+        {
+            rigidBody2D.AddForce(transform.right * m_SideThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+        }
+        else
+        {
+            rigidBody2D.AddForce(-transform.right * -m_SideThrust * m_MovementSpeedScale * Time.fixedDeltaTime);
+        }
 
         // Clamp velocity as thrust only adds more force
         Vector2 velocity = Vector2.zero;
