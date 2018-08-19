@@ -79,7 +79,7 @@ public class AudioManager : MonoBehaviour
         }
 
         sound.GetSource().volume = sound.GetVolume() * m_MasterVolume * m_SoundVolume * (1.0f + UnityEngine.Random.Range(-sound.GetVolumeVariance() / 2.0f, sound.GetVolumeVariance() / 2.0f));
-        sound.GetSource().pitch = sound.GetVolume() * (1.0f + UnityEngine.Random.Range(-sound.GetPitchVariance() / 2.0f, sound.GetPitchVariance() / 2.0f));
+        sound.GetSource().pitch = sound.GetPitch() * (1.0f + UnityEngine.Random.Range(-sound.GetPitchVariance() / 2.0f, sound.GetPitchVariance() / 2.0f));
         sound.GetSource().Play();
 
         Debug.Log("AudioManager: now playing " + sound.GetName());
@@ -106,8 +106,8 @@ public class AudioManager : MonoBehaviour
             }
         }
 
-        music.GetSource().volume = music.GetVolume() * m_MasterVolume * m_MusicVolume * (1.0f + UnityEngine.Random.Range(-music.GetVolumeVariance() / 2.0f, music.GetVolumeVariance() / 2.0f));
-        music.GetSource().pitch = music.GetVolume() * (1.0f + UnityEngine.Random.Range(-music.GetPitchVariance() / 2.0f, music.GetPitchVariance() / 2.0f));
+        music.GetSource().volume = music.GetVolume() * m_MasterVolume * m_MusicVolume;
+        music.GetSource().pitch = music.GetPitch();
         music.GetSource().Play();
 
         Debug.Log("AudioManager: now playing " + music.GetName());
