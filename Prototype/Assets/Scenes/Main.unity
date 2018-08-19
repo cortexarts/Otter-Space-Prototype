@@ -15403,6 +15403,7 @@ MonoBehaviour:
   m_StarsPerLayer: 96000000fa000000c8000000
   m_StarSize: 0.2
   m_StarDistance: 50
+  smoothing: 1
 --- !u!4 &616118028
 Transform:
   m_ObjectHideFlags: 0

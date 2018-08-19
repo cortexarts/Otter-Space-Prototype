@@ -19,8 +19,14 @@ public class StarsParticleSystem : MonoBehaviour
     [SerializeField]
     private float m_StarDistance = 10f;
 
+    [SerializeField]
+    private float smoothing = 1f;
+
+    private Vector3 previousCenterPosition;		// position of cam in previous frame
+
     private float m_StarDistanceSqr;
     private int m_MaxStarCount;
+    private float[] parallaxScales;     // camera's movement / background movement
 
     private Transform m_ParticleTransform;
     private ParticleSystem.Particle[] m_Points;
@@ -64,6 +70,12 @@ public class StarsParticleSystem : MonoBehaviour
         if(m_Points == null)
         {
             CreateStars();
+
+            parallaxScales = new float[m_Points.Length];
+            for(int i = 0; i < m_Points.Length; ++i)
+            {
+                parallaxScales[i] = m_Points[i].position.z * -1;
+            }
         }
 
         int accumulatedLayerStarCount = 0;
@@ -86,8 +98,25 @@ public class StarsParticleSystem : MonoBehaviour
                     Vector2 randomPosition = Random.insideUnitCircle * m_StarDistance + new Vector2(m_ParticleTransform.position.x - offsetX, m_ParticleTransform.position.y - offsetY);
                     m_Points[accumulatedLayerStarCount + j].position = new Vector3(randomPosition.x, randomPosition.y, m_LayerOffsets[i]);
                 }
+                else
+                {
+                    // the parallax is the opposite of the cam movement because the prev. frame is mult. by the cale
+                    float parallax = (previousCenterPosition.x - m_ParticleTransform.position.x) * parallaxScales[i];
+
+                    // set a target x pos which is the current pos + parallax
+                    float backgroundTargetPosX = m_Points[accumulatedLayerStarCount + j].position.x + parallax;
+
+                    // create a target pos which is the backgrounds current pos with its target x pos
+                    Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, m_Points[accumulatedLayerStarCount + j].position.y, m_Points[accumulatedLayerStarCount + j].position.z);
+
+                    // fade between current pos and the target position using lerp
+                    m_Points[accumulatedLayerStarCount + j].position = Vector3.Lerp(m_Points[accumulatedLayerStarCount + j].position, backgroundTargetPos, smoothing * Time.deltaTime);
+                }
             }
         }
+
+        // set the previousCamPs to the cams pos at the end of the frame
+        previousCenterPosition = m_ParticleTransform.position;
 
         GetComponent<ParticleSystem>().SetParticles(m_Points, m_Points.Length);
     }
