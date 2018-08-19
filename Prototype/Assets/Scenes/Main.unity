@@ -15399,7 +15399,7 @@ MonoBehaviour:
   - {r: 0, g: 0.38431373, b: 0.99607843, a: 1}
   - {r: 1, g: 0, b: 0.29803923, a: 1}
   - {r: 0.3019608, g: 0.43137255, b: 0.79607844, a: 1}
-  m_LayerOffsets: 0a0000000f0000001e000000
+  m_LayerOffsets: 0a000000140000001e000000
   m_StarsPerLayer: 96000000fa000000c8000000
   m_StarSize: 0.2
   m_StarDistance: 50
@@ -22012,7 +22012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxMovementSpeed: 100
-  rotationSpeedScale: 20
+  rotationSpeedScale: 100
   movementSpeedScale: 50
   fuelAmount: 100
 --- !u!61 &855464898

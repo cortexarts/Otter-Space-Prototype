@@ -89,7 +89,7 @@ public class StarsParticleSystem : MonoBehaviour
 
             for(int j = 0; j < m_StarsPerLayer[i]; j++)
             {
-                if((m_Points[accumulatedLayerStarCount + j].position - m_ParticleTransform.position).sqrMagnitude > m_StarDistanceSqr)
+                if((new Vector2(m_Points[accumulatedLayerStarCount + j].position.x, m_Points[accumulatedLayerStarCount + j].position.y) - new Vector2(m_ParticleTransform.position.x, m_ParticleTransform.position.y)).sqrMagnitude > m_StarDistanceSqr)
                 {
                     //Vector2 randomPosition = Random.insideUnitCircle * m_StarDistance + new Vector2(m_ParticleTransform.position.x, m_ParticleTransform.position.y);
                     float offsetX = m_Points[accumulatedLayerStarCount + j].position.x - m_ParticleTransform.position.x;
@@ -101,7 +101,7 @@ public class StarsParticleSystem : MonoBehaviour
                 else
                 {
                     // the parallax is the opposite of the cam movement because the prev. frame is mult. by the cale
-                    float parallax = (previousCenterPosition.x - m_ParticleTransform.position.x) * parallaxScales[i];
+                    float parallax = (previousCenterPosition.x - Camera.main.transform.position.x) * parallaxScales[i];
 
                     // set a target x pos which is the current pos + parallax
                     float backgroundTargetPosX = m_Points[accumulatedLayerStarCount + j].position.x + parallax;
@@ -116,7 +116,7 @@ public class StarsParticleSystem : MonoBehaviour
         }
 
         // set the previousCamPs to the cams pos at the end of the frame
-        previousCenterPosition = m_ParticleTransform.position;
+        previousCenterPosition = Camera.main.transform.position;
 
         GetComponent<ParticleSystem>().SetParticles(m_Points, m_Points.Length);
     }
