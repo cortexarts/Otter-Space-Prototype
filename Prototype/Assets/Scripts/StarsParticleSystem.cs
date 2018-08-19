@@ -79,7 +79,11 @@ public class StarsParticleSystem : MonoBehaviour
             {
                 if((m_Points[accumulatedLayerStarCount + j].position - m_ParticleTransform.position).sqrMagnitude > m_StarDistanceSqr)
                 {
-                    Vector2 randomPosition = Random.insideUnitCircle * m_StarDistance + new Vector2(m_ParticleTransform.position.x, m_ParticleTransform.position.y);
+                    //Vector2 randomPosition = Random.insideUnitCircle * m_StarDistance + new Vector2(m_ParticleTransform.position.x, m_ParticleTransform.position.y);
+                    float offsetX = m_Points[accumulatedLayerStarCount + j].position.x - m_ParticleTransform.position.x;
+                    float offsetY = m_Points[accumulatedLayerStarCount + j].position.y - m_ParticleTransform.position.y;
+
+                    Vector2 randomPosition = Random.insideUnitCircle * m_StarDistance + new Vector2(m_ParticleTransform.position.x - offsetX, m_ParticleTransform.position.y - offsetY);
                     m_Points[accumulatedLayerStarCount + j].position = new Vector3(randomPosition.x, randomPosition.y, m_LayerOffsets[i]);
                 }
             }
