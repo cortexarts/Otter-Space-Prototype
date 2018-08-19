@@ -6,10 +6,10 @@ public class RocketAnimator : MonoBehaviour
 {
     [SerializeField]
     private GameObject m_ForwardThrusters;
-    [SerializeField]
-    private GameObject m_BackwardsThrusters;
+
     [SerializeField]
     private GameObject m_TurnLeftThrusters;
+
     [SerializeField]
     private GameObject m_TurnRightThrusters;
 
@@ -23,7 +23,7 @@ public class RocketAnimator : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        ValueDependendAnimation(m_PlayerController.GetForwardThrust(), m_BackwardsThrusters, m_ForwardThrusters);
+        ValueDependendAnimationPositive(m_PlayerController.GetForwardThrust(), m_ForwardThrusters);
         ValueDependendAnimation(-m_PlayerController.GetSideThrust(), m_TurnLeftThrusters, m_TurnRightThrusters);
     }
 
@@ -62,6 +62,29 @@ public class RocketAnimator : MonoBehaviour
         {
             max.SetActive(false);
             min.SetActive(false);
+        }
+    }
+
+    //Using a value which is between 1 and -1 it is decided which gameobject to turn on
+    //Max when the value is greater then 0
+    //Min when the value is less then 0
+    private void ValueDependendAnimationPositive(float value, GameObject max)
+    {
+        if(value > 0)
+        {
+            if(!max.activeInHierarchy)
+            {
+                max.SetActive(true);
+            }
+
+            foreach(Transform t in max.GetComponentInChildren<Transform>())
+            {
+                t.localScale = new Vector3(value, value, 1);
+            }
+        }
+        else if(value == 0)
+        {
+            max.SetActive(false);
         }
     }
 }
