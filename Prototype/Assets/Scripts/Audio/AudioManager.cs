@@ -6,21 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    #region Persistent Singleton
+    #region Singleton
 
     public static AudioManager m_Instance;
 
     private void Awake()
     {
-        if(m_Instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            m_Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        m_Instance = this;
     }
 
     #endregion

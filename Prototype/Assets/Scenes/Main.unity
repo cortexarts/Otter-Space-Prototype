@@ -1840,7 +1840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -2, y: 2}
   m_SizeDelta: {x: 200, y: 45}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &214729402
@@ -10166,7 +10166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &550653715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15449,7 +15449,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 300, y: 250}
+  m_SizeDelta: {x: 218, y: 218}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &628441994
 MonoBehaviour:
@@ -23704,7 +23704,7 @@ Prefab:
     - target: {fileID: 224904586929439906, guid: 9c1e11114c881a649893f581910ead75,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -16.666687
+      value: -16.666626
       objectReference: {fileID: 0}
     - target: {fileID: 224249432827909820, guid: 9c1e11114c881a649893f581910ead75,
         type: 2}
@@ -23714,7 +23714,7 @@ Prefab:
     - target: {fileID: 224249432827909820, guid: 9c1e11114c881a649893f581910ead75,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -8.333313
+      value: -8.333374
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1e11114c881a649893f581910ead75, type: 2}
@@ -26088,7 +26088,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 2, y: 2}
   m_SizeDelta: {x: 200, y: 45}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1174029361
@@ -31734,7 +31734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1786078603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31773,6 +31773,7 @@ MonoBehaviour:
   m_Dot: {fileID: 21300000, guid: a95d4d18fa895934a9dcc10eff40c777, type: 3}
   m_ActiveDotColor: {r: 0.18431373, g: 0.2, b: 0.20784314, a: 1}
   m_InactiveDotColor: {r: 0.84705883, g: 0.8509804, b: 0.8509804, a: 1}
+  m_DotSize: 12.8
   m_ControlObjects:
   - {fileID: 11400000, guid: fab8bfa6c62314f408422373deb93126, type: 2}
   - {fileID: 11400000, guid: f57fcbfd0c0144b4380045302a9b4a41, type: 2}
@@ -33082,6 +33083,16 @@ Prefab:
       propertyPath: m_Music.Array.data[3].m_Scenes.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114347295108622098, guid: 641e1514efa62434b803de54d5afba1b,
+        type: 2}
+      propertyPath: m_Music.Array.data[0].m_Scenes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347295108622098, guid: 641e1514efa62434b803de54d5afba1b,
+        type: 2}
+      propertyPath: m_Music.Array.data[1].m_Scenes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4464086059944144, guid: 641e1514efa62434b803de54d5afba1b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -33117,6 +33128,16 @@ Prefab:
     - target: {fileID: 114347295108622098, guid: 641e1514efa62434b803de54d5afba1b,
         type: 2}
       propertyPath: m_Music.Array.data[3].m_Scenes.Array.data[0]
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347295108622098, guid: 641e1514efa62434b803de54d5afba1b,
+        type: 2}
+      propertyPath: m_Music.Array.data[0].m_Scenes.Array.data[0]
+      value: Main
+      objectReference: {fileID: 0}
+    - target: {fileID: 114347295108622098, guid: 641e1514efa62434b803de54d5afba1b,
+        type: 2}
+      propertyPath: m_Music.Array.data[1].m_Scenes.Array.data[0]
       value: Main
       objectReference: {fileID: 0}
     m_RemovedComponents: []

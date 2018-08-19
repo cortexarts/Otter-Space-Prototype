@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26fe8308161b9d4282a86bee7e3ccf0, type: 3}
   m_Name: Radar
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: e29e632b1553c104192354011cf353c8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76786a2cd85de074dbf4a46f08175d3e, type: 3}
   m_Title: Radar
-  m_Description: Use the radar to find nearby hazards, such as asteroids.
+  m_Description: Use the radar to find nearby hazards, such as asteroids. The radar
+    will be shown when the Ottership finds a target midflight.

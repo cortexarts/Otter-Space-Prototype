@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26fe8308161b9d4282a86bee7e3ccf0, type: 3}
   m_Name: Resources
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 56036db8b8728d84dab643428cf9c327, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 327ed0cb02652a74aab36b340eb14b0d, type: 3}
   m_Title: Resources
   m_Description: Gather resources to heal planet Earth and upgrade your Ottership.
+    Resources can be found on different planets during your journey to Otter space.

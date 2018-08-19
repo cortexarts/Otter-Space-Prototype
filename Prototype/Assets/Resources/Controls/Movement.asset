@@ -11,6 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26fe8308161b9d4282a86bee7e3ccf0, type: 3}
   m_Name: Movement
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: ced393c33a31bbf4787b468b847a7a66, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd16995342b42c54f9b535f4ed67c65d, type: 3}
   m_Title: Movement
-  m_Description: Use your arrow keys or finger to control the Ottership.
+  m_Description: Use the bottom side of the screen to increase forward thrust. To
+    rotate the Ottership, rotate your device. By pressing on either side of the screen
+    you will be able to use the side thrusters to move.

@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f26fe8308161b9d4282a86bee7e3ccf0, type: 3}
   m_Name: Shooting
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: 3825966ba00abf04288a7d5b4404cc53, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bea9f6a5bfe30f4e9d00b586d54453b, type: 3}
   m_Title: Shooting
-  m_Description: Use your spacebar or finger to shoot at hazards.
+  m_Description: Tap the Ottership near hazards to shoot at nearby hazards. Solve
+    the equations on the asteroids to target hazards.
