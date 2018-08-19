@@ -76,27 +76,27 @@ public class PlayerController : MonoBehaviour
         {
             m_Thrust += Time.fixedDeltaTime;
         }
-        else if (m_Thrust > Time.fixedDeltaTime)
+        else if (m_Thrust > 0)
         {
-            m_Thrust -= Time.fixedDeltaTime;
+            m_Thrust = 0;
         }
 
         if(m_LeftThrusting)
         {
             m_LeftThrust += Time.deltaTime;
         }
-        else if(m_LeftThrust > Time.deltaTime)
+        else if(m_LeftThrust > 0)
         {
-            m_LeftThrust -= Time.deltaTime;
+            m_LeftThrust = 0;
         }
 
         if(m_RightThrusting)
         {
             m_RightThrust += Time.deltaTime;
         }
-        else if(m_RightThrust > Time.deltaTime)
+        else if(m_RightThrust > 0)
         {
-            m_RightThrust -= Time.deltaTime;
+            m_RightThrust = 0;
         }
 
         //if(rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
