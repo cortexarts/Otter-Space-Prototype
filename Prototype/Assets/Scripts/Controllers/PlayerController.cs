@@ -74,11 +74,11 @@ public class PlayerController : MonoBehaviour
 
         if(m_Thrusting)
         {
-            m_Thrust += Time.deltaTime;
+            m_Thrust += Time.fixedDeltaTime;
         }
-        else if (m_Thrust > Time.deltaTime)
+        else if (m_Thrust > Time.fixedDeltaTime)
         {
-            m_Thrust -= Time.deltaTime;
+            m_Thrust -= Time.fixedDeltaTime;
         }
 
         if(m_LeftThrusting)
@@ -99,12 +99,16 @@ public class PlayerController : MonoBehaviour
             m_RightThrust -= Time.deltaTime;
         }
 
-        if(rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
-        {
-            rigidBody2D.AddForce(transform.up * m_Thrust * movementSpeedScale * Time.fixedDeltaTime);
-            rigidBody2D.AddForce(-transform.right * m_LeftThrust * movementSpeedScale * Time.fixedDeltaTime);
-            rigidBody2D.AddForce(transform.right * m_RightThrust * movementSpeedScale * Time.fixedDeltaTime);
-        }
+        //if(rigidBody2D.velocity.x < maxMovementSpeed && rigidBody2D.velocity.y < maxMovementSpeed)
+        //{
+        //    rigidBody2D.AddForce(transform.up * m_Thrust * movementSpeedScale * Time.fixedDeltaTime);
+        //    rigidBody2D.AddForce(-transform.right * m_LeftThrust * movementSpeedScale * Time.fixedDeltaTime);
+        //    rigidBody2D.AddForce(transform.right * m_RightThrust * movementSpeedScale * Time.fixedDeltaTime);
+        //}
+
+        rigidBody2D.AddForce(transform.up * m_Thrust * movementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(-transform.right * m_LeftThrust * movementSpeedScale * Time.fixedDeltaTime);
+        rigidBody2D.AddForce(transform.right * m_RightThrust * movementSpeedScale * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
