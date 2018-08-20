@@ -200,4 +200,9 @@ public class IntroCanvasManager : MonoBehaviour
                 break;
         }
     }
+
+    public State GetCurrentState()
+    {
+        return currentState;
+    }
 }

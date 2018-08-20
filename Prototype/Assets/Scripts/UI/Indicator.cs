@@ -27,33 +27,44 @@ public class Indicator : MonoBehaviour
         indRange /= 2f;
 
         gooey.normal.textColor = new Vector4(0, 0, 0, 0); //Makes the box around the icon invisible.
-        m_ObjectName = "Asteroid";
+
+        if(m_ObjectName.Length < 1)
+        {
+            m_ObjectName = "Asteroid";
+        }
     }
 
     void OnGUI()
     {
         if (!visible)
         {
-            Vector3 dir = transform.position - cam.transform.position;
-            dir = Vector3.Normalize(dir);
-            dir.y *= -1f;
+            if(IntroCanvasManager.m_Instance.GetCurrentState() == IntroCanvasManager.State.Playing)
+            {
+                Vector3 dir = transform.position - cam.transform.position;
+                dir = Vector3.Normalize(dir);
+                dir.y *= -1f;
 
-            Vector2 indPos = new Vector2(indRange.x * dir.x, indRange.y * dir.y);
-            indPos = new Vector2((Screen.width / 2) + indPos.x,
-                              (Screen.height / 2) + indPos.y);
+                Vector2 indPos = new Vector2(indRange.x * dir.x, indRange.y * dir.y);
+                indPos = new Vector2((Screen.width / 2) + indPos.x,
+                                  (Screen.height / 2) + indPos.y);
 
-            Vector3 pdir = transform.position - cam.ScreenToWorldPoint(new Vector3(indPos.x, indPos.y,
-                                                                                    transform.position.z));
-            pdir = Vector3.Normalize(pdir);
+                Vector3 pdir = transform.position - cam.ScreenToWorldPoint(new Vector3(indPos.x, indPos.y,
+                                                                                        transform.position.z));
+                pdir = Vector3.Normalize(pdir);
 
-            float angle = Mathf.Atan2(pdir.x, pdir.y) * Mathf.Rad2Deg;
+                float angle = Mathf.Atan2(pdir.x, pdir.y) * Mathf.Rad2Deg;
 
-            GUI.color = new Color(RGBA.x, RGBA.y, RGBA.z, RGBA.w);
-            GUI.Label(new Rect(indPos.x, indPos.y, scaleRes * iconSize * 2, scaleRes * iconSize), m_ObjectName);
-            GUIUtility.RotateAroundPivot(angle, indPos); //Rotates the GUI. Only rotates GUI drawn after the rotate is called, not before.
-            GUI.Box(new Rect(indPos.x, indPos.y, scaleRes * iconSize, scaleRes * iconSize), icon, gooey);
-            GUIUtility.RotateAroundPivot(0, indPos); //Rotates GUI back to the default so that GUI drawn after is not rotated.
-            RGBA.w -= Time.deltaTime * 0.2f;
+                GUI.color = new Color(RGBA.x, RGBA.y, RGBA.z, RGBA.w);
+                GUI.Label(new Rect(indPos.x, indPos.y, scaleRes * iconSize * 2, scaleRes * iconSize), m_ObjectName);
+                GUIUtility.RotateAroundPivot(angle, indPos); //Rotates the GUI. Only rotates GUI drawn after the rotate is called, not before.
+                GUI.Box(new Rect(indPos.x, indPos.y, scaleRes * iconSize, scaleRes * iconSize), icon, gooey);
+                GUIUtility.RotateAroundPivot(0, indPos); //Rotates GUI back to the default so that GUI drawn after is not rotated.
+
+                if(m_ObjectName == "Asteroid")
+                {
+                    RGBA.w -= Time.deltaTime * 0.2f;
+                }
+            }
         }
     }
 
