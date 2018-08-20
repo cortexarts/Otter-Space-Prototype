@@ -869,6 +869,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AsteroidSpawner: {fileID: 1825476107784772, guid: b6c3e5708d0fef14581377aa260af9df,
     type: 2}
+  m_CanvasCamera: {fileID: 0}
 --- !u!4 &88010164
 Transform:
   m_ObjectHideFlags: 0
@@ -9192,7 +9193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &550653715
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14135,6 +14136,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 628441992}
   m_CullTransparentMesh: 0
+--- !u!223 &636266138 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 223025688829282196, guid: 7df287c00bd14a2479c85869bdd8979b,
+    type: 2}
+  m_PrefabInternal: {fileID: 53739859}
 --- !u!1 &641296976
 GameObject:
   m_ObjectHideFlags: 0
@@ -25748,7 +25754,7 @@ MonoBehaviour:
   panelDialogue: {fileID: 733282316}
   panelControlsSide: {fileID: 851450704}
   panelcontrolsBottom: {fileID: 1857965080}
-  canvasRadar: {fileID: 0}
+  canvasRadar: {fileID: 636266138}
 --- !u!114 &1722288243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26804,7 +26810,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2480ebddf5b4d49ae711ed19b51bff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentFuel: {fileID: 11400000, guid: a8a983486ff47c54fae16c6c046f298c, type: 2}
+  m_currentFuel: {fileID: 11400000, guid: ba0344d957c0f4443a1e78c4923eb7fa, type: 2}
   m_discoveredFuel: []
 --- !u!1 &1848394871
 GameObject:
