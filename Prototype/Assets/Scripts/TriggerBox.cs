@@ -38,7 +38,7 @@ public class TriggerBox : MonoBehaviour
         {
             m_CanvasCamera.SetActive(false);
             m_CanvasPlayer.SetActive(false);
-            m_PanelShooting.SetActive(true);
+            m_PanelShooting.SetActive(false);
         }
     }
 }
