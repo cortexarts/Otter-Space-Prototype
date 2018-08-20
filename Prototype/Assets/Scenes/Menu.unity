@@ -2065,7 +2065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Color: {r: 0.043137256, g: 0.79607844, b: 0.4509804, a: 1}
   m_RingColor: {r: 0.015686272, g: 0.69803923, b: 0.3823538, a: 1}
-  m_Duration: 30
+  m_Duration: 60
   m_EarthTarget: {fileID: 1233308953}
   m_TargetImages:
   - {fileID: 1984041296}
