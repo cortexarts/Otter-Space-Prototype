@@ -1354,6 +1354,17 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   m_ObjectName: Uknown object
+--- !u!114 &136550418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 136550416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de78113ab2b66b943ac4459eda7f37fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &141756179
 GameObject:
   m_ObjectHideFlags: 0

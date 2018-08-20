@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    #region Singleton
+
+    public static CameraController m_Instance;
+
+    private void Awake()
+    {
+        m_Instance = this;
+    }
+
+    #endregion
+
     public Transform target;
     public float minSize = 10.0f;
     public float maxSize = 25.0f;
