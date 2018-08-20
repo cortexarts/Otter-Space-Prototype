@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
 
         if(m_Thrusting)
         {
-            m_ForwardThrust += Time.fixedDeltaTime;
+            m_ForwardThrust += (Time.fixedDeltaTime / fuelLevel);
         }
         else
         {
@@ -88,11 +88,11 @@ public class PlayerController : MonoBehaviour
 
         if(m_LeftThrusting)
         {
-            m_SideThrust += Time.deltaTime;
+            m_SideThrust += (Time.fixedDeltaTime / fuelLevel);
         }
         else if(m_RightThrusting)
         {
-            m_SideThrust -= Time.deltaTime;
+            m_SideThrust -= (Time.fixedDeltaTime / fuelLevel);
         }
         else
         {
