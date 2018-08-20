@@ -5,7 +5,7 @@ using UnityEngine;
 public class RadarSwipe : MonoBehaviour
 {
     public Vector3 axis = Vector3.forward;
-    public Canvas target;
+    public GameObject target;
     public float radius = 2.0f;
     public float radiusSpeed = 0.5f;
     public float rotationSpeed = 80.0f;
@@ -14,7 +14,7 @@ public class RadarSwipe : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        center = new Vector3(0.0f, -5.0f, 0.0f);
+        center = new Vector3(0.0f, 0.0f, 0.0f);
         //transform.position = (transform.position - center).normalized * radius + center;
     }
 	

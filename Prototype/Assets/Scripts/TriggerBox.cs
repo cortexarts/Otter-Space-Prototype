@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerBox : MonoBehaviour
 {
     public GameObject AsteroidSpawner;
+    public GameObject m_CanvasCamera;
 
 	// Use this for initialization
 	void Start ()
@@ -22,6 +23,7 @@ public class TriggerBox : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            m_CanvasCamera.SetActive(true);
             Instantiate(AsteroidSpawner, gameObject.transform.position, Quaternion.identity);
         }
     }
