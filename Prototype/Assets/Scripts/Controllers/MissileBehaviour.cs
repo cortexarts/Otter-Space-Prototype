@@ -15,7 +15,7 @@ public class MissileBehaviour : MonoBehaviour
     // Handle camera shaking
     public float camShakeAmt = 0.05f;
     public float camShakeLength = 0.1f;
-    CameraShake camShake;
+    //CameraShake camShake;
 
     private Rigidbody2D m_Rigidbody2D;
 
@@ -28,11 +28,11 @@ public class MissileBehaviour : MonoBehaviour
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-        camShake = Camera.main.GetComponent<CameraShake>();
-        if (camShake == null)
-        {
-            Debug.LogError("No CameraShake script found.");
-        }
+        //camShake = Camera.main.GetComponent<CameraShake>();
+        //if (camShake == null)
+        //{
+        //    Debug.LogError("No CameraShake script found.");
+        //}
     }
 
     void SetAnswer(int value)
@@ -48,7 +48,7 @@ public class MissileBehaviour : MonoBehaviour
         if (lifeTime > maxLifeTime)
         {
             Instantiate(AsteroidExplosion, this.gameObject.transform.position, Quaternion.identity);
-            DestroyObject(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -73,22 +73,22 @@ public class MissileBehaviour : MonoBehaviour
             if (collider.GetComponent<AsteroidValues>().answer == answer)
             {
                 rocketShooting.numCorrectAnswers++;
-                DestroyObject(collider.gameObject);
-                camShake.Shake(camShakeAmt, camShakeLength);
-                Instantiate(IronOre, this.gameObject.transform.position, Quaternion.identity);
+                Destroy(collider.gameObject);
+                //camShake.Shake(camShakeAmt, camShakeLength);
+                Instantiate(IronOre, gameObject.transform.position, Quaternion.identity);
             }
 
             if (rocketShooting.numCorrectAnswers == 3)
             {
                 rocketShooting.numCorrectAnswers = 0;
-                Instantiate(Shockwave, this.gameObject.transform.position, Quaternion.identity);
+                Instantiate(Shockwave, gameObject.transform.position, Quaternion.identity);
             }
             else
             {
-                Instantiate(AsteroidExplosion, this.gameObject.transform.position, Quaternion.identity);
+                Instantiate(AsteroidExplosion, gameObject.transform.position, Quaternion.identity);
             }
 
-            DestroyObject(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

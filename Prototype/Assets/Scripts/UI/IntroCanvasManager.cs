@@ -25,7 +25,9 @@ public class IntroCanvasManager : MonoBehaviour
     public GameObject panelDialogue;
     public GameObject panelControlsSide;
     public GameObject panelcontrolsBottom;
-    public Canvas canvasRadar;
+    public GameObject canvasRadar;
+    public GameObject canvasPlayer;
+    public GameObject panelShooting;
 
     private CameraController cameraController;
     private DialogueManager m_DialogueManager;
@@ -63,7 +65,9 @@ public class IntroCanvasManager : MonoBehaviour
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(false);
-                canvasRadar.gameObject.SetActive(false);
+                canvasPlayer.SetActive(false);
+                canvasRadar.SetActive(false);
+                panelShooting.SetActive(false);
                 cameraController.isZooming = false;
                 currentState = State.Controls;
                 break;
@@ -74,7 +78,8 @@ public class IntroCanvasManager : MonoBehaviour
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(false);
-                canvasRadar.gameObject.SetActive(false);
+                canvasPlayer.SetActive(false);
+                canvasRadar.SetActive(false);
                 cameraController.isZooming = false;
                 currentState = State.Animation;
                 break;
@@ -85,7 +90,8 @@ public class IntroCanvasManager : MonoBehaviour
                 panelLab.SetActive(true);
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(true);
-                canvasRadar.gameObject.SetActive(false);
+                canvasPlayer.SetActive(false);
+                canvasRadar.SetActive(false);
                 cameraController.isZooming = false;
                 m_DialogueManager.PlayDialogue(0, true);
                 currentState = State.Crafting;
@@ -109,7 +115,8 @@ public class IntroCanvasManager : MonoBehaviour
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(true);
-                canvasRadar.gameObject.SetActive(false);
+                canvasRadar.SetActive(false);
+                canvasPlayer.SetActive(false);
                 cameraController.isZooming = false;
                 m_DialogueManager.PlayDialogue(2, false);
                 currentState = State.Dialogue;
@@ -123,7 +130,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelDialogue.SetActive(true);
                 panelControlsSide.SetActive(false);
                 panelcontrolsBottom.SetActive(false);
-                canvasRadar.gameObject.SetActive(false);
+                canvasRadar.SetActive(false);
                 m_DialogueManager.PlayDialogue(3, false);
                 cameraController.isZooming = true;
                 currentState = State.Help;
@@ -136,8 +143,9 @@ public class IntroCanvasManager : MonoBehaviour
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(false);
                 panelControlsSide.SetActive(false);
+                canvasPlayer.SetActive(false);
                 panelcontrolsBottom.SetActive(false);
-                canvasRadar.gameObject.SetActive(false);
+                canvasRadar.SetActive(false);
                 currentState = State.Fuel;
                 break;
             case State.Fuel:
@@ -148,8 +156,10 @@ public class IntroCanvasManager : MonoBehaviour
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(false);
                 panelControlsSide.SetActive(true);
+                canvasPlayer.SetActive(false);
                 panelcontrolsBottom.SetActive(true);
-                canvasRadar.gameObject.SetActive(false);
+                canvasRadar.SetActive(false);
+                panelShooting.SetActive(false);
                 currentState = State.Playing;
                 break;
             default:
@@ -159,7 +169,9 @@ public class IntroCanvasManager : MonoBehaviour
                 panelLab.SetActive(false);
                 panelDialogue.SetActive(false);
                 panelNotebook.SetActive(false);
+                canvasPlayer.SetActive(false);
                 canvasRadar.gameObject.SetActive(false);
+                panelShooting.SetActive(false);
                 cameraController.isZooming = true;
                 currentState = State.Playing;
                 break;

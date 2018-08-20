@@ -20,35 +20,33 @@ public class RocketShooting : MonoBehaviour
     void Start ()
     {
         Value = ValueMin;
-        //TextValue.text = Value.ToString();
+        TextValue.text = Value.ToString();
     }
 
     // Update is called once per frame
     void Update ()
     {
-        if (CrossPlatformInputManager.GetButtonDown("Fire1"))
-        {
-            if (Time.time - lastShotTime > cooldown)
-            {
-                Shoot();
-                lastShotTime = Time.time;
-            }
-        }
-
         if (Input.GetKeyUp(IncreaseKey))
         {
-            Value++;
-            TextValue.text = Value.ToString();
+            IncrementValue();
         }
 
         if (Input.GetKeyUp(DecreaseKey))
         {
-            Value--;
-            TextValue.text = Value.ToString();
+            DecrementValue();
         }
     }
 
-    void Shoot()
+    public void Shoot()
+    {
+        if(Time.time - lastShotTime > cooldown)
+        {
+            CreateMissile();
+            lastShotTime = Time.time;
+        }
+    }
+
+    private void CreateMissile()
     {
         GameObject Missile = Instantiate(missilePrefab, this.transform.position, this.transform.rotation);
         Missile.SendMessage("SetAnswer", Value);
@@ -57,6 +55,18 @@ public class RocketShooting : MonoBehaviour
         {
             Value = ValueMin;
         }
+        TextValue.text = Value.ToString();
+    }
+
+    public void IncrementValue()
+    {
+        Value++;
+        TextValue.text = Value.ToString();
+    }
+
+    public void DecrementValue()
+    {
+        Value--;
         TextValue.text = Value.ToString();
     }
 }

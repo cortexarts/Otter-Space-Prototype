@@ -32,8 +32,11 @@ public class AsteroidDespawn : MonoBehaviour
         if (AsteroidSpawner != null)
         {
             float distanceToRocket = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
-            
-            if (distanceToRocket > maxDistanceToRocket) DestroyObject(this.gameObject);
+
+            if(distanceToRocket > maxDistanceToRocket)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
