@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 114297542140111958}
   - component: {fileID: 114353514102963546}
   - component: {fileID: 114550528389299768}
+  - component: {fileID: 114995706842062372}
   m_Layer: 0
   m_Name: Moon
   m_TagString: Planet
@@ -144,7 +145,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1838734011984202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 337.7, z: 1.2603512}
+  m_LocalPosition: {x: 0, y: 700, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4304207164351094}
@@ -201,7 +202,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 11
+  m_Radius: 1.75
 --- !u!58 &58684565285358122
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -216,7 +217,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 4
 --- !u!114 &114297542140111958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   center: {fileID: 0}
   axis: {x: 0, y: 0, z: -1}
-  radius: 100
+  radius: 200
   radiusSpeed: 0.5
   rotationSpeed: 0.5
 --- !u!114 &114353514102963546
@@ -244,7 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e976996c08a5c84dafd1bcc619d7c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 1
+  rotationSpeed: 0.2
 --- !u!114 &114550528389299768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,6 +259,88 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationPull: 0.1
   mass: 0.5
+--- !u!114 &114995706842062372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1838734011984202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d52a98257e2f04094d954a5a84b3a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 600863eb7593bd94aa37aa2a0a1bdaa8, type: 3}
+  RGBA: {x: 0, y: 0, z: 0, w: 0}
+  iconSize: 15
+  gooey:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  m_ObjectName: Uknown object
 --- !u!212 &212021227053349118
 SpriteRenderer:
   m_ObjectHideFlags: 1

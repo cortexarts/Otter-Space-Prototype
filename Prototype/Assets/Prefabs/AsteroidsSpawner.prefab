@@ -58,7 +58,7 @@ MonoBehaviour:
   asteroidPrefab: {fileID: 1934805013521798, guid: 468396f3f187a03448b1e38e7052ad7e,
     type: 2}
   asteroids: []
-  TextSize: 45
+  TextSize: 25
   difficulty: 0
   valueAnswerMin: 0
   valueAnswerMax: 10
