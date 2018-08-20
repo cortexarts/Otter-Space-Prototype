@@ -1728,7 +1728,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main
+          m_StringArgument: Intro_animation
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -2253,6 +2253,7 @@ GameObject:
   - component: {fileID: 1317086750}
   - component: {fileID: 1317086749}
   - component: {fileID: 1317086748}
+  - component: {fileID: 1317086752}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -2328,6 +2329,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1317086752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1317086747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6460d52f7a72a4eaf54dbe083c1183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Clip: Menu
 --- !u!1 &1325640912
 GameObject:
   m_ObjectHideFlags: 0

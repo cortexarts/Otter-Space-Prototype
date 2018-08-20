@@ -105,6 +105,13 @@ MonoBehaviour:
     m_Pitch: 1
     m_PitchVariance: 0.1
     m_Scenes: []
+  - m_Name: PageTurnSound
+    m_Clip: {fileID: 8300000, guid: 083a5b6611c15ce4799ce50260e9e824, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0.1
+    m_Pitch: 1
+    m_PitchVariance: 0.1
+    m_Scenes: []
   m_Music:
   - m_Name: Wobble
     m_Clip: {fileID: 8300000, guid: 3ea521d7a8861aa4ebf91359002d263d, type: 3}
@@ -141,4 +148,15 @@ MonoBehaviour:
     m_PitchVariance: 0
     m_Scenes:
     - Main
+    - Intro_animation
+    m_Loop: 1
+  - m_Name: Deepdown
+    m_Clip: {fileID: 8300000, guid: 898f93ba0c62c9a4ca209ddeddf91f22, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Scenes:
+    - Main
+    - Intro_animation
     m_Loop: 1

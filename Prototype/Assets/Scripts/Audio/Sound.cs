@@ -6,32 +6,32 @@ using UnityEngine.Audio;
 public class Sound
 {
     [SerializeField]
-    private string m_Name;
+    protected string m_Name;
 
     [SerializeField]
-    private AudioClip m_Clip;
-
-    [SerializeField]
-    [Range(0.0f, 1.0f)]
-    private float m_Volume = 0.75f;
+    protected AudioClip m_Clip;
 
     [SerializeField]
     [Range(0.0f, 1.0f)]
-    private float m_VolumeVariance = 0.1f;
+    protected float m_Volume = 0.75f;
+
+    [SerializeField]
+    [Range(0.0f, 1.0f)]
+    protected float m_VolumeVariance = 0.1f;
 
     [SerializeField]
     [Range(0.1f, 3.0f)]
-    private float m_Pitch = 1.0f;
+    protected float m_Pitch = 1.0f;
 
     [SerializeField]
     [Range(0.0f, 1.0f)]
-    private float m_PitchVariance = 0.1f;
+    protected float m_PitchVariance = 0.1f;
 
     [SerializeField]
-    private List<string> m_Scenes;
+    protected List<string> m_Scenes;
 
-    private AudioMixerGroup m_Mixer;
-    private AudioSource m_Source;
+    protected AudioMixerGroup m_Mixer;
+    protected AudioSource m_Source;
 
     public Sound()
     {

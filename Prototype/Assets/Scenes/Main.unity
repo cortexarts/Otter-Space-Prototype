@@ -14874,6 +14874,7 @@ GameObject:
   - component: {fileID: 654371869}
   - component: {fileID: 654371868}
   - component: {fileID: 654371872}
+  - component: {fileID: 654371873}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -14970,6 +14971,18 @@ MonoBehaviour:
   lookAheadMoveThreshold: 0.1
   zoomSpeed: 0.1
   isZooming: 0
+--- !u!114 &654371873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 654371867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6460d52f7a72a4eaf54dbe083c1183, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Clip: Deepdown
 --- !u!1 &657076211
 GameObject:
   m_ObjectHideFlags: 0

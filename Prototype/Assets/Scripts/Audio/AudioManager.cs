@@ -6,17 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    #region Singleton
-
-    public static AudioManager m_Instance;
-
-    private void Awake()
-    {
-        m_Instance = this;
-    }
-
-    #endregion
-
     [Header("Volume")]
     [SerializeField]
     private float m_MasterVolume = 1.0f;
@@ -38,8 +27,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private Music[] m_Music;
 
-    private void Start()
+    public static AudioManager m_Instance;
+
+    private void Awake()
     {
+        m_Instance = this;
+
         foreach(Sound sound in m_Sounds)
         {
             sound.SetSource(gameObject.AddComponent<AudioSource>());
@@ -66,17 +59,17 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if(sound.GetScenes().Count > 0)
-        {
-            if(sound.GetScenes().Contains("") == false && sound.GetScenes().Contains(SceneManager.GetActiveScene().name) == false)
-            {
-                Debug.LogWarning("Music: " + a_Name + " was not set for this scene!");
+        //if(sound.GetScenes().Count > 0)
+        //{
+        //    if(sound.GetScenes().Contains("") == false && sound.GetScenes().Contains(SceneManager.GetActiveScene().name) == false)
+        //    {
+        //        Debug.LogWarning("Music: " + a_Name + " was not set for this scene!");
 
-                return;
-            }
+        //        return;
+        //    }
 
-            return;
-        }
+        //    return;
+        //}
 
         sound.GetSource().volume = sound.GetVolume() * m_MasterVolume * m_SoundVolume * (1.0f + UnityEngine.Random.Range(-sound.GetVolumeVariance() / 2.0f, sound.GetVolumeVariance() / 2.0f));
         sound.GetSource().pitch = sound.GetPitch() * (1.0f + UnityEngine.Random.Range(-sound.GetPitchVariance() / 2.0f, sound.GetPitchVariance() / 2.0f));
@@ -96,18 +89,18 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        if(music.GetScenes().Count > 0)
-        {
-            if(music.GetScenes().Contains("") == false && music.GetScenes().Contains(SceneManager.GetActiveScene().name) == false)
-            {
-                Debug.LogWarning("Music: " + a_Name + " was not set for this scene!");
+        //if(music.GetScenes().Count > 0)
+        //{
+        //    if(music.GetScenes().Contains("") == false && music.GetScenes().Contains(SceneManager.GetActiveScene().name) == false)
+        //    {
+        //        Debug.LogWarning("Music: " + a_Name + " was not set for this scene!");
 
-                return;
-            }
-        }
+        //        return;
+        //    }
+        //}
 
-        music.GetSource().volume = music.GetVolume() * m_MasterVolume * m_MusicVolume;
-        music.GetSource().pitch = music.GetPitch();
+        music.GetSource().volume = music.GetVolume() * m_MasterVolume * m_MusicVolume * (1.0f + UnityEngine.Random.Range(-music.GetVolumeVariance() / 2.0f, music.GetVolumeVariance() / 2.0f));
+        music.GetSource().pitch = music.GetPitch() * (1.0f + UnityEngine.Random.Range(-music.GetPitchVariance() / 2.0f, music.GetPitchVariance() / 2.0f));
         music.GetSource().Play();
 
         Debug.Log("AudioManager: now playing " + music.GetName());
