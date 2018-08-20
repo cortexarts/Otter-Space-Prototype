@@ -7,6 +7,11 @@
     <phrase name="Professor Onion">Don't use too much, as we only have so little left on Earth.</phrase>
   </dialogue>
   <dialogue index="2">
+    <phrase name="Professor Onion">Nice to see that you are progressing so fast!</phrase>
+    <phrase name="Professor Onion">What you see here is your notebook. The current page shows the elements of the periodic table.</phrase>
+    <phrase name="Professor Onion">All the items you discover will be added to your notebook.</phrase>
+  </dialogue>
+  <dialogue index="3">
     <phrase name="Professor Onion">Dimitri, we have a problem.</phrase>
     <phrase name="Captain Dimitri">What is it?</phrase>
 	<phrase name="Professor Onion">We are running out of time!</phrase>
@@ -16,12 +21,12 @@
 	<phrase name="Professor Onion">They will starve if no one brings them wood and water.</phrase>
 	<phrase name="Captain Dimitri">Fine! I’ll go, I guess I have no otter choice.</phrase>
   </dialogue>
-  <dialogue index="3">
+  <dialogue index="4">
     <phrase name="Captain Dimitri">Wait.. How do I start this ship again?</phrase>
     <phrase name="Professor Onion">Oh sorry, I almost forgot. Make sure to select one of the types of fuel you have created.</phrase>
 	<phrase name="Captain Dimitri">Got it!</phrase>
   </dialogue>
-  <dialogue index="4">
+  <dialogue index="5">
     <phrase name="Dimitri">Wow, is that the moon?</phrase>
     <phrase name="Onion">No, it’s a giant space ball.</phrase>
 	<phrase name="Dimitri">Really?</phrase>

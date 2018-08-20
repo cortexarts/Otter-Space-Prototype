@@ -92,8 +92,9 @@ public class IntroCanvasManager : MonoBehaviour
                 panelHUD.SetActive(false);
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(true);
-                panelDialogue.SetActive(false);
+                panelDialogue.SetActive(true);
                 cameraController.isZooming = false;
+                m_DialogueManager.PlayDialogue(1, false);
                 currentState = State.Notebook;
                 break;
             case State.Notebook:
@@ -104,7 +105,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(true);
                 cameraController.isZooming = false;
-                m_DialogueManager.PlayDialogue(1, false);
+                m_DialogueManager.PlayDialogue(2, false);
                 currentState = State.Dialogue;
                 break;
             case State.Dialogue:
@@ -116,7 +117,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelDialogue.SetActive(true);
                 panelControlsSide.SetActive(false);
                 panelcontrolsBottom.SetActive(false);
-                m_DialogueManager.PlayDialogue(2, false);
+                m_DialogueManager.PlayDialogue(3, false);
                 cameraController.isZooming = true;
                 currentState = State.Help;
                 break;
