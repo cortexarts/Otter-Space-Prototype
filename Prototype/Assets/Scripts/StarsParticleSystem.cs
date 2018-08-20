@@ -31,9 +31,12 @@ public class StarsParticleSystem : MonoBehaviour
     private Transform m_ParticleTransform;
     private ParticleSystem.Particle[] m_Points;
 
+    private Camera m_Camera;
+
     // Use this for initialization
     void Start()
     {
+        m_Camera = Camera.main;
         m_ParticleTransform = transform;
         m_StarDistanceSqr = m_StarDistance * m_StarDistance;
         for(int i = 0; i < m_StarsPerLayer.Count; i++)
@@ -101,7 +104,7 @@ public class StarsParticleSystem : MonoBehaviour
                 else
                 {
                     // the parallax is the opposite of the cam movement because the prev. frame is mult. by the cale
-                    float parallax = (previousCenterPosition.x - Camera.main.transform.position.x) * parallaxScales[i];
+                    float parallax = (previousCenterPosition.x - m_Camera.transform.position.x) * parallaxScales[i];
 
                     // set a target x pos which is the current pos + parallax
                     float backgroundTargetPosX = m_Points[accumulatedLayerStarCount + j].position.x + parallax;
@@ -116,7 +119,7 @@ public class StarsParticleSystem : MonoBehaviour
         }
 
         // set the previousCamPs to the cams pos at the end of the frame
-        previousCenterPosition = Camera.main.transform.position;
+        previousCenterPosition = m_Camera.transform.position;
 
         GetComponent<ParticleSystem>().SetParticles(m_Points, m_Points.Length);
     }
