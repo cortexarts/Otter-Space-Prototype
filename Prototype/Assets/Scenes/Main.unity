@@ -20591,7 +20591,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MaxVelocity: 10
-  m_RotationSpeedScale: 20
+  m_RotationSpeedScale: 50
   m_MovementSpeedScale: 350
   m_FuelAmount: 100
   m_ForwardThrust: 0
@@ -20640,8 +20640,8 @@ MonoBehaviour:
   missilePrefab: {fileID: 1115444120706154, guid: ea8e8e277a3c712448b17e8cfb97d76a,
     type: 2}
   TextValue: {fileID: 1779769659}
-  IncreaseKey: 113
-  DecreaseKey: 101
+  IncreaseKey: 110
+  DecreaseKey: 109
   Value: 0
   ValueMin: 0
   ValueMax: 10
@@ -21692,7 +21692,7 @@ Prefab:
     - target: {fileID: 224562871111094242, guid: 9c1e11114c881a649893f581910ead75,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 224562871111094242, guid: 9c1e11114c881a649893f581910ead75,
         type: 2}
@@ -26431,7 +26431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4d97f24405ded24dbaf425297c55e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 5
+  currentState: 0
   panelControls: {fileID: 1786078602}
   panelHUD: {fileID: 550653714}
   panelLab: {fileID: 167483540}
@@ -26735,7 +26735,7 @@ Prefab:
     - target: {fileID: 224999967116179482, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 224999967116179482, guid: c3fff86eab6bfbf4081ba1713cd96f8d,
         type: 2}

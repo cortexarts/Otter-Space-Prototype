@@ -72,7 +72,7 @@ public class IntroCanvasManager : MonoBehaviour
             case State.Controls:
                 panelControls.SetActive(false);
                 panelHUD.SetActive(false);
-                panelLab.SetActive(false);
+                panelLab.SetActive(true);
                 panelNotebook.SetActive(false);
                 panelDialogue.SetActive(false);
                 canvasPlayer.SetActive(false);
@@ -86,7 +86,7 @@ public class IntroCanvasManager : MonoBehaviour
                 panelLab.SetActive(false);
                 panelNotebook.SetActive(true);
                 panelDialogue.SetActive(true);
-                canvasRadar.gameObject.SetActive(false);
+                canvasRadar.SetActive(false);
                 cameraController.isZooming = false;
                 m_DialogueManager.PlayDialogue(1, false);
                 currentState = State.Notebook;
